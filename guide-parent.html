@@ -4,6 +4,16 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="canonical" href="https://ptaorg.github.io/guide-parent.html">
+  <meta property="og:title" content="保護者の方へ | PTA適正化推進委員会">
+  <meta property="og:description" content="PTA入会・会費・個人情報の問題を絵で直感的に整理。テンプレートPDF・FAQ付き。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ptaorg.github.io/guide-parent.html">
+  <meta property="og:image" content="https://ptaorg.github.io/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="保護者の方へ | PTA適正化推進委員会">
+  <meta name="twitter:description" content="PTA入会・会費・個人情報の問題を絵で直感的に整理。テンプレートPDF・FAQ付き。">
+  <meta name="twitter:image" content="https://ptaorg.github.io/assets/og-image.png">
   <title>保護者の方へ | PTA適正化推進委員会</title>
   <meta name="description" content="PTA入会・会費・個人情報の問題を絵で直感的に整理。テンプレートPDF付き。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -439,6 +449,128 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== 書類チェッカー（対話型） ===== -->
+    <section style="background:linear-gradient(135deg,var(--navy),var(--navy-2));padding:72px 0;color:#fff">
+      <div class="wrap wrap-narrow">
+        <div style="text-align:center;margin-bottom:40px">
+          <div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">対話型ツール</div>
+          <h2 class="section-title" style="color:#fff;margin-top:8px">手元の書類をチェックする</h2>
+          <p style="color:rgba(255,255,255,.78);font-size:.95rem;line-height:1.85">学校から届いた書類の特徴を選ぶと、問題点と対処法を表示します。</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px">
+          <p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:16px">書類の特徴をすべて選択してください（複数可）</p>
+
+          <div id="checker-options" style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+            <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .2s">
+              <input type="checkbox" value="auto" style="margin-top:3px;width:16px;height:16px;accent-color:var(--gold)">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:.95rem">入会の意思確認欄がない</div>
+                <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-top:2px">書類を受け取っただけで自動的に会員扱いになる</div>
+              </div>
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .2s">
+              <input type="checkbox" value="optout" style="margin-top:3px;width:16px;height:16px;accent-color:var(--gold)">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:.95rem">「希望しない場合はご連絡ください」と書いてある</div>
+                <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-top:2px">断らなければ加入というオプトアウト方式</div>
+              </div>
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .2s">
+              <input type="checkbox" value="combined" style="margin-top:3px;width:16px;height:16px;accent-color:var(--gold)">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:.95rem">給食費等と同じ書類・口座で会費が記載されている</div>
+                <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-top:2px">学校徴収金とPTA会費が一体化している</div>
+              </div>
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .2s">
+              <input type="checkbox" value="privacy" style="margin-top:3px;width:16px;height:16px;accent-color:var(--gold)">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:.95rem">個人情報の利用目的・提供先の記載がない</div>
+                <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-top:2px">どこに情報が渡るか書いていない</div>
+              </div>
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .2s">
+              <input type="checkbox" value="ok" style="margin-top:3px;width:16px;height:16px;accent-color:var(--gold)">
+              <div>
+                <div style="font-weight:800;color:#fff;font-size:.95rem">自署欄があり、任意と書かれている</div>
+                <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-top:2px">自分で署名して提出するオプトイン方式</div>
+              </div>
+            </label>
+          </div>
+
+          <button onclick="runChecker()" style="width:100%;padding:14px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:900;font-size:1rem;border:none;cursor:pointer;transition:opacity .2s">判定する</button>
+
+          <div id="checker-result" style="display:none;margin-top:24px"></div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    function runChecker() {
+      const checked = [...document.querySelectorAll('#checker-options input:checked')].map(i => i.value);
+      const result = document.getElementById('checker-result');
+      result.style.display = 'block';
+
+      if (checked.length === 0) {
+        result.innerHTML = '<div style="background:rgba(255,255,255,.08);border-radius:12px;padding:18px;color:rgba(255,255,255,.7)">特徴を1つ以上選択してください。</div>';
+        return;
+      }
+
+      if (checked.includes('ok') && checked.length === 1) {
+        result.innerHTML = `<div style="background:rgba(21,128,61,.2);border:1px solid rgba(74,222,128,.4);border-radius:12px;padding:20px">
+          <div style="font-weight:900;color:#86efac;font-size:1.05rem;margin-bottom:10px">✅ 適正な形式です</div>
+          <p style="color:rgba(255,255,255,.85);font-size:.92rem;line-height:1.8;margin:0">自署欄あり・任意明示のオプトイン方式は、民法・横浜市通知に沿った適正な入会手続です。個人情報の利用目的が明示されていれば、より確実です。</p>
+        </div>`;
+        return;
+      }
+
+      let problems = [];
+      let actions = [];
+
+      if (checked.includes('auto')) {
+        problems.push('入会届なし → 民法522条：契約が成立していない可能性があります');
+        actions.push('「いつ入会したか」をPTAに書面で問い合わせる（照会書テンプレートを使用）');
+      }
+      if (checked.includes('optout')) {
+        problems.push('オプトアウト方式 → 消費者契約法・民法上、法的根拠がありません');
+        actions.push('「拒否の申出をしなかった」は承諾とみなされません。会費は返還請求が可能です');
+      }
+      if (checked.includes('combined')) {
+        problems.push('抱き合わせ徴収 → 民法113条・地方財政法違反の可能性');
+        actions.push('PTA会費の引き落とし停止をPTAと学校の双方に書面で申し入れる');
+      }
+      if (checked.includes('privacy')) {
+        problems.push('個人情報の目的外利用 → 個人情報保護法69条違反の可能性');
+        actions.push('個人情報の利用停止・削除をPTAと学校に書面で要請する');
+      }
+
+      const level = problems.length >= 3 ? 'danger' : problems.length >= 1 ? 'warning' : 'ok';
+      const colors = {
+        danger: { bg: 'rgba(185,28,28,.2)', border: 'rgba(252,165,165,.4)', title: '#fca5a5', label: '⛔ 重大な問題の可能性' },
+        warning: { bg: 'rgba(217,119,6,.2)', border: 'rgba(251,191,36,.4)', title: '#fde68a', label: '⚠️ 問題の可能性あり' },
+      };
+      const c = colors[level] || colors.warning;
+
+      result.innerHTML = `
+        <div style="background:${c.bg};border:1px solid ${c.border};border-radius:12px;padding:22px">
+          <div style="font-weight:900;color:${c.title};font-size:1rem;margin-bottom:14px">${c.label}</div>
+          <div style="margin-bottom:14px">
+            <div style="font-size:.8rem;font-weight:900;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-bottom:8px">確認された問題点</div>
+            ${problems.map(p => `<div style="display:flex;gap:8px;font-size:.88rem;color:rgba(255,255,255,.88);margin-bottom:6px;line-height:1.6"><span style="color:#fca5a5;flex-shrink:0">✗</span>${p}</div>`).join('')}
+          </div>
+          <div>
+            <div style="font-size:.8rem;font-weight:900;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-bottom:8px">対処方法</div>
+            ${actions.map(a => `<div style="display:flex;gap:8px;font-size:.88rem;color:rgba(255,255,255,.88);margin-bottom:6px;line-height:1.6"><span style="color:#86efac;flex-shrink:0">→</span>${a}</div>`).join('')}
+          </div>
+          <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:10px;flex-wrap:wrap">
+            <a href="audit/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:900;font-size:.84rem;text-decoration:none">⚙️ 監査システムで詳しく診断</a>
+            <a href="#pdf-dl" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-weight:800;font-size:.84rem;text-decoration:none;border:1px solid rgba(255,255,255,.2)">📄 テンプレートPDFを使う</a>
+          </div>
+        </div>`;
+    }
+    </script>
 
     <!-- ===== ステップ ===== -->
     <section class="steps-section">
