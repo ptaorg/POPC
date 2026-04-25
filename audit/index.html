@@ -1958,7 +1958,11 @@
     reset() {
       this.role = null; this.step = 0; this.answers = [];
       this.toggle('intro', true); this.toggle('question', false); this.toggle('result', false);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const intro = document.getElementById('screen-intro');
+      if (intro) {
+        const top = intro.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
     },
 
     toggle(name, show) {
@@ -1997,7 +2001,11 @@
 
       const prev = document.getElementById('prevQuestion');
       prev.disabled = this.step === 0;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const qScreen = document.getElementById('screen-question');
+      if (qScreen) {
+        const top = qScreen.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
     },
 
     prev() { if (this.step > 0) { this.step--; this.renderQuestion(); } },
@@ -2006,7 +2014,11 @@
       this.toggle('question', false);
       this.toggle('result', true);
       this.renderResult();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const shell = document.querySelector('.audit-shell');
+      if (shell) {
+        const top = shell.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
     },
 
     renderResult() {
