@@ -303,85 +303,156 @@
           <h2 class="section-title">全国教育委員会への照会結果（抜粋）</h2>
           <p class="section-lead">論点ごとに各教育委員会の見解をまとめています。PDF原本はGoogleサイトで公開しています。</p>
         </div>
-        <div class="response-grid">
-          <div class="response-card">
+        <!-- 3類型タブ -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;margin-top:40px">
+          <button onclick="filterType('all',this)" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--navy);background:var(--navy);color:#fff;font-weight:800;font-size:.86rem;cursor:pointer">すべて</button>
+          <button onclick="filterType('jishu',this)" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-weight:700;font-size:.86rem;cursor:pointer">✅ 自主徴収移行方針</button>
+          <button onclick="filterType('iinkai',this)" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-weight:700;font-size:.86rem;cursor:pointer">⚠️ 委任契約で継続</button>
+          <button onclick="filterType('misei',this)" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-weight:700;font-size:.86rem;cursor:pointer">📋 未整理・検討中</button>
+        </div>
+
+        <div class="response-grid" id="responseGrid">
+
+          <!-- ✅ 静岡市：最も明確な適正化対応 -->
+          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
+            <div class="rc-header">
+              <div class="rc-region">静岡市教育委員会</div>
+              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 完全分離済</span>
+            </div>
+            <div class="rc-body">
+              <strong style="display:block;color:#14532d;margin-bottom:8px">「PTA会費は学校徴収金から除外。教職員の関与ゼロ。公務外」</strong>
+              問1：PTA会費は学校徴収金から除外しており、勤務時間中における教職員の関与はありません。問2：公務として取り扱っておりません。問3：公的資源は利用していません。問7：公務外であるため関与していません。
+            </div>
+            <div><span class="rc-topic">会費徴収</span><span class="rc-topic">職務専念義務</span><span class="rc-topic">完全分離</span></div>
+            <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <!-- ✅ 厚木市：自主徴収が最もふさわしいと明言 -->
+          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
+            <div class="rc-header">
+              <div class="rc-region">厚木市教育委員会（神奈川県）</div>
+              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 自主徴収へ移行</span>
+            </div>
+            <div class="rc-body">
+              <strong style="display:block;color:#14532d;margin-bottom:8px">「法的根拠なし。PTAが独自に徴収することが最もふさわしい」</strong>
+              問1：法的位置付けはなく、慣例的に行われているものと認識。PTAが独自に徴収することが最もふさわしい方法と考えている。問3：なし（慣例による運用）。問5：そのような文書は存在していない。問7：PTA会費は、PTAによる自主徴収が正しい徴収方法であるという周知を図っていく。
+            </div>
+            <div><span class="rc-topic">自主徴収</span><span class="rc-topic">法的根拠なし</span></div>
+            <div class="rc-source">令和8年4月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <!-- ✅ 磐田市：自主徴収へ移行検討 -->
+          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
+            <div class="rc-header">
+              <div class="rc-region">磐田市教育委員会（静岡県）</div>
+              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 移行検討中</span>
+            </div>
+            <div class="rc-body">
+              <strong style="display:block;color:#14532d;margin-bottom:8px">「法的位置付け：未整理。PTA自主徴収への移行を含めて検討」</strong>
+              問1：未整理。問2：PTAの事務を補助する協力行為。問3：なし（慣例による運用）。問4：PTA会長が責任主体。問7：学校徴収金の徴収事務を教育委員会事務局に集約する方向で協議中。PTA会費については、PTAによる自主徴収への移行を含めて対応を検討している。
+            </div>
+            <div><span class="rc-topic">移行検討</span><span class="rc-topic">未整理</span></div>
+            <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <!-- ⚠️ 川崎市：委任契約で校務化——詰みモデル -->
+          <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
+            <div class="rc-header">
+              <div class="rc-region">川崎市教育委員会</div>
+              <span class="rc-verdict rc-verdict-inappropriate">⚠️ 委任契約で校務化</span>
+            </div>
+            <div class="rc-body">
+              <strong style="display:block;color:#7c2d12;margin-bottom:8px">「要綱・規則でPTA会費徴収を校務と位置付け。委任契約で継続」</strong>
+              問1：川崎市立学校におけるPTAの会費の取扱等に関する要綱によりPTA会費の収納等に関する事務について校務として定め、PTA代表者から市への委任に基づき学校が処理できるものとしている。問7：現行の学校関与を継続する（委任契約等による継続を含む）。※このモデルはPTAへの入会契約が未成立の場合、「無効な契約の集金代行」となる矛盾を内包している。
+            </div>
+            <div><span class="rc-topic">委任契約</span><span class="rc-topic">校務化</span><span class="rc-topic">川崎市モデル</span></div>
+            <div class="rc-source">令和8年4月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <!-- ⚠️ 仙台市：委任契約で継続 -->
+          <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
+            <div class="rc-header">
+              <div class="rc-region">仙台市教育委員会</div>
+              <span class="rc-verdict rc-verdict-inappropriate">⚠️ 委任契約で継続</span>
+            </div>
+            <div class="rc-body">
+              <strong style="display:block;color:#7c2d12;margin-bottom:8px">「業務委任契約の範囲において校務として従事」</strong>
+              問1：学校長が教職員の大きな負担とならないと判断した範囲かつPTAと学校間で結んだ業務委任契約の範囲において校務として従事できるものと整理。問3：仙台市学校納付金取扱要領。問7：学校長が教職員の大きな負担とならないと判断した範囲での協力を継続。校納金と一緒に徴収している学校については、収納管理サービスの活用による事務軽減を図る。
+            </div>
+            <div><span class="rc-topic">委任契約</span><span class="rc-topic">校務</span></div>
+            <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <!-- ⚠️ 大阪市：教育活動と密接な場合のみ校務 -->
+          <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
+            <div class="rc-header">
+              <div class="rc-region">大阪市教育委員会</div>
+              <span class="rc-verdict rc-verdict-inappropriate">⚠️ 条件付き校務</span>
+            </div>
+            <div class="rc-body">
+              <strong style="display:block;color:#7c2d12;margin-bottom:8px">「教育活動に密接かつ必要性があると認められる場合のみ職務として認める」</strong>
+              問1：教職員が勤務時間中にPTA活動に従事する場合、学校の教育活動に密接な関わりをもつと認められ、かつ教職員の関与の必要性があると認められる場合についてのみ、職務として認めている。問2：学校の校務として行われる事務（条件付き）。問3：なし（慣例による運用）。問5：なし。問7：現行の学校関与を継続する。
+            </div>
+            <div><span class="rc-topic">条件付き校務</span><span class="rc-topic">慣例根拠なし</span></div>
+            <div class="rc-source">令和8年4月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <!-- 📋 横浜市（通知発出済み・最上位） -->
+          <div class="response-card" data-type="jishu" style="border-top:4px solid #d4af37;background:linear-gradient(145deg,#fff,rgba(212,175,55,.05))">
             <div class="rc-header">
               <div class="rc-region">横浜市教育委員会</div>
-              <span class="rc-verdict rc-verdict-illegal">違法・禁止</span>
+              <span class="rc-verdict" style="background:#fef3c7;color:#92400e">🥇 全国初・通知発出</span>
             </div>
-            <div class="rc-body">オプトアウト方式・みなし加入は不適切であり、入会届（オプトイン）を必須とする。名簿の無断提供は禁止。非会員の子どもへの差別的取扱いは人権侵害。</div>
-            <div>
-              <span class="rc-topic">入会手続</span>
-              <span class="rc-topic">個人情報</span>
-              <span class="rc-topic">非会員差別</span>
+            <div class="rc-body">
+              <strong style="display:block;color:#78350f;margin-bottom:8px">「学教第1965号」——オプトイン義務化・名簿提供禁止・非会員差別禁止</strong>
+              令和7年12月、全市立学校に対し、①入会届（オプトイン）の提出を必須化、②学校名簿のPTAへの提供禁止、③非会員の子どもへの差別的取扱いを人権侵害として禁止、④学校徴収金との一括引落禁止、を規定した全国初の行政指針を発出。令和8年3月の照会では「現在、取扱いに関する検討を重ねているところ」と回答（通知運用の精緻化中）。
             </div>
-            <div class="rc-source">通知番号：学教第1965号（令和7年12月） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+            <div><span class="rc-topic">通知発出</span><span class="rc-topic">オプトイン義務化</span><span class="rc-topic">全国初</span></div>
+            <div class="rc-source">令和7年12月・令和8年3月 照会回答 <a href="administrative-materials.html">通知の詳細解説 →</a></div>
           </div>
-          <div class="response-card">
+
+          <!-- 📋 藤沢市 -->
+          <div class="response-card" data-type="misei">
             <div class="rc-header">
-              <div class="rc-region">文部科学省</div>
-              <span class="rc-verdict rc-verdict-inappropriate">不適切</span>
+              <div class="rc-region">藤沢市教育委員会（神奈川県）</div>
+              <span class="rc-verdict" style="background:#f3f4f6;color:#374151">📋 検討中</span>
             </div>
-            <div class="rc-body">PTAは任意加入の団体であり、学校が加入を強制することは適切ではない。教職員のPTA業務への従事は公務ではなく、職務専念義務との関係を整理すべき。</div>
-            <div>
-              <span class="rc-topic">任意加入</span>
-              <span class="rc-topic">職務専念義務</span>
+            <div class="rc-body">
+              問1：PTAの事務を補助する協力行為として整理。問3：慣例による運用。問7：回答なし（検討中）。「PTAは任意加入の私的団体であり、PTA会費はPTAの私会計として管理される資金であると理解」との前提を明示。
             </div>
-            <div class="rc-source">通知・Q&A等 <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">資料を見る →</a></div>
+            <div><span class="rc-topic">協力行為</span><span class="rc-topic">私的団体と明示</span></div>
+            <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
-          <div class="response-card">
+
+          <!-- Googleサイトへの誘導 -->
+          <div class="response-card" data-type="all" style="background:linear-gradient(145deg,#eff6ff,#dbeafe);border:1px solid #93c5fd">
             <div class="rc-header">
-              <div class="rc-region">全国複数自治体</div>
-              <span class="rc-verdict rc-verdict-illegal">違法</span>
+              <div class="rc-region">全97自治体の回答</div>
+              <span class="rc-verdict" style="background:#dbeafe;color:#1d4ed8">PDF原本公開中</span>
             </div>
-            <div class="rc-body">学校保有の名簿を本人同意なくPTAに提供することは個人情報保護法69条に違反する、との回答を複数の教育委員会から得ています。</div>
-            <div>
-              <span class="rc-topic">個人情報</span>
-              <span class="rc-topic">名簿提供</span>
-            </div>
-            <div class="rc-source">情報公開請求・照会回答（50自治体） <a href="national-archive.html">詳細を見る →</a></div>
+            <div class="rc-body">Excelファイル（回答集）に記録された97件の回答メール全件を含む、全国の教育委員会への照会回答・要望書回答の原本PDFはGoogleサイトで公開しています。日光市・大阪市・三鷹市・兵庫県・長野県・滋賀県・鹿児島市・徳島市など多数を含む。</div>
+            <div><span class="rc-topic">全97自治体</span><span class="rc-topic">要望書回答</span><span class="rc-topic">入会手続照会</span></div>
+            <div class="rc-source"><a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">Googleサイトで全原本を見る →</a></div>
           </div>
-          <div class="response-card">
-            <div class="rc-header">
-              <div class="rc-region">複数の教育委員会</div>
-              <span class="rc-verdict rc-verdict-inappropriate">職務外</span>
-            </div>
-            <div class="rc-body">教職員がPTA事務（配布・集金・会計補助）を勤務時間中に行うことは職務専念義務（地公法35条）の問題があるとの見解を示した教育委員会があります。</div>
-            <div>
-              <span class="rc-topic">職務専念義務</span>
-              <span class="rc-topic">教職員関与</span>
-            </div>
-            <div class="rc-source">照会回答 <a href="personnel.html">論点を読む →</a></div>
-          </div>
-          <div class="response-card">
-            <div class="rc-header">
-              <div class="rc-region">複数の教育委員会</div>
-              <span class="rc-verdict rc-verdict-inappropriate">不適切</span>
-            </div>
-            <div class="rc-body">非会員家庭の子どもに対して、登校班への参加拒否や行事の際の差別的扱いを行うことは不適切であるとの見解を示しています。</div>
-            <div>
-              <span class="rc-topic">非会員差別</span>
-              <span class="rc-topic">子どもの権利</span>
-            </div>
-            <div class="rc-source">照会回答 <a href="guide-board.html">詳細を読む →</a></div>
-          </div>
-          <div class="response-card">
-            <div class="rc-header">
-              <div class="rc-region">Googleサイト</div>
-              <span class="rc-verdict" style="background:#dbeafe;color:#1d4ed8">原本公開中</span>
-            </div>
-            <div class="rc-body">約50自治体への情報公開請求で収集した実物の回答文書・PTA関連文書はGoogleサイトで公開しています。PDF原本として参照いただけます。</div>
-            <div>
-              <span class="rc-topic">全論点</span>
-              <span class="rc-topic">実物文書</span>
-            </div>
-            <div class="rc-source"><a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">Googleサイトで原本を見る →</a></div>
-          </div>
+
         </div>
+
+        <script>
+        function filterType(type, btn) {
+          document.querySelectorAll('#responseGrid .response-card').forEach(card => {
+            card.style.display = (type === 'all' || card.dataset.type === type || card.dataset.type === 'all') ? 'flex' : 'none';
+          });
+          document.querySelectorAll('[onclick^="filterType"]').forEach(b => {
+            b.style.background = '#fff'; b.style.color = 'var(--navy)'; b.style.borderColor = 'var(--line)';
+          });
+          btn.style.background = 'var(--navy)'; btn.style.color = '#fff'; btn.style.borderColor = 'var(--navy)';
+        }
+        </script>
+
       </div>
     </section>
 
-    <!-- 自治体別回答詳細 -->
+    <!-- 自治体別回答詳細
     <section style="background:#fff;padding:64px 0">
       <div class="wrap">
         <div class="section-center">
@@ -526,16 +597,48 @@
   const bi=L.icon({iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',shadowUrl:'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41]});
   const oi=L.icon({iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',shadowUrl:'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41]});
   const pts=[
-    {n:'横浜市',la:35.4437,lo:139.6380,d:'全国初のオプトイン義務化通知（学教第1965号）を発出',ic:ri},
-    {n:'東京都',la:35.6762,lo:139.6503,d:'照会回答取得・資料収集対象',ic:bi},
-    {n:'大阪府',la:34.6937,lo:135.5023,d:'照会回答取得・比較対象',ic:bi},
-    {n:'名古屋市',la:35.1815,lo:136.9066,d:'資料収集対象',ic:oi},
-    {n:'札幌市',la:43.0618,lo:141.3545,d:'照会回答取得',ic:bi},
-    {n:'福岡市',la:33.5904,lo:130.4017,d:'資料収集対象',ic:oi},
-    {n:'岡山市',la:34.6618,lo:133.9344,d:'個人情報論点・照会回答取得',ic:bi},
-    {n:'滋賀県',la:35.0045,lo:135.8686,d:'会費徴収論点・照会回答取得',ic:bi},
-    {n:'仙台市',la:38.2682,lo:140.8694,d:'資料収集対象',ic:oi},
-    {n:'広島市',la:34.3853,lo:132.4553,d:'照会回答取得',ic:bi},
+    // 横浜市（赤・中心）
+    {n:'横浜市',la:35.4437,lo:139.6380,d:'<b>全国初</b> オプトイン義務化通知（学教第1965号）発出。全市立校で入会届必須化・名簿提供禁止・非会員差別禁止。',ic:ri},
+    // 関東（照会回答取得済・青）
+    {n:'川崎市',la:35.5308,lo:139.7030,d:'会費徴収・職務専念義務 照会回答取得。校務化アプローチの限界を確認。',ic:bi},
+    {n:'相模原市',la:35.5701,lo:139.3631,d:'入会手続・個人情報 照会回答取得。是正の方向性を確認。',ic:bi},
+    {n:'藤沢市',la:35.3386,lo:139.4900,d:'無権代理・会費徴収 照会回答取得。代理徴収の法的問題を確認。',ic:bi},
+    {n:'小田原市',la:35.2658,lo:139.1554,d:'強制加入・個人情報・会費徴収 照会回答取得。',ic:bi},
+    {n:'東京都',la:35.6762,lo:139.6503,d:'入会手続・個人情報 照会回答取得。複数区教委への照会実施。',ic:bi},
+    {n:'千葉市',la:35.6074,lo:140.1065,d:'会費徴収・学校関与 照会回答取得。',ic:bi},
+    {n:'さいたま市',la:35.8616,lo:139.6455,d:'個人情報提供 照会回答取得。',ic:bi},
+    {n:'水戸市',la:36.3418,lo:140.4470,d:'資料収集対象',ic:oi},
+    {n:'宇都宮市',la:36.5551,lo:139.8826,d:'資料収集対象',ic:oi},
+    {n:'前橋市',la:36.3895,lo:139.0601,d:'資料収集対象',ic:oi},
+    // 東北
+    {n:'仙台市',la:38.2682,lo:140.8694,d:'職務専念義務 照会回答取得。',ic:bi},
+    {n:'大崎市',la:38.5748,lo:140.9541,d:'会費徴収・代理徴収 照会回答取得。',ic:bi},
+    {n:'盛岡市',la:39.7036,lo:141.1527,d:'資料収集対象',ic:oi},
+    {n:'青森市',la:40.8244,lo:140.7400,d:'資料収集対象',ic:oi},
+    // 中部・北陸
+    {n:'名古屋市',la:35.1815,lo:136.9066,d:'個人情報・強制加入 照会回答取得。',ic:bi},
+    {n:'静岡市',la:34.9769,lo:138.3831,d:'会費徴収 照会回答取得。',ic:bi},
+    {n:'滋賀県',la:35.0045,lo:135.8686,d:'会費徴収論点・職務専念義務 照会回答取得。',ic:bi},
+    {n:'金沢市',la:36.5947,lo:136.6256,d:'資料収集対象',ic:oi},
+    {n:'富山市',la:36.6953,lo:137.2137,d:'資料収集対象',ic:oi},
+    // 近畿
+    {n:'大阪市',la:34.6937,lo:135.5023,d:'入会手続・個人情報 照会回答取得。',ic:bi},
+    {n:'堺市',la:34.5733,lo:135.4830,d:'非会員差別論点（大阪地裁堺支部判決）関連調査。',ic:bi},
+    {n:'京都市',la:35.0116,lo:135.7681,d:'個人情報・会費徴収 照会回答取得。',ic:bi},
+    {n:'神戸市',la:34.6901,lo:135.1956,d:'資料収集対象',ic:oi},
+    {n:'奈良市',la:34.6851,lo:135.8050,d:'資料収集対象',ic:oi},
+    // 中国・四国
+    {n:'岡山市',la:34.6618,lo:133.9344,d:'個人情報論点・照会回答取得。',ic:bi},
+    {n:'広島市',la:34.3853,lo:132.4553,d:'会費徴収・職務専念義務 照会回答取得。',ic:bi},
+    {n:'松山市',la:33.8416,lo:132.7657,d:'資料収集対象',ic:oi},
+    // 九州
+    {n:'福岡市',la:33.5904,lo:130.4017,d:'入会手続・個人情報 照会回答取得。',ic:bi},
+    {n:'熊本市',la:32.8032,lo:130.7079,d:'熊本PTA裁判（H28年判決）・熊本県教育長宛行政実例（S39年）の発祥地。照会回答取得。',ic:bi},
+    {n:'鹿児島市',la:31.5966,lo:130.5571,d:'鹿児島地裁の事例（黙示加入の限界）関連調査。',ic:bi},
+    {n:'大分市',la:33.2382,lo:131.6126,d:'資料収集対象',ic:oi},
+    // 北海道
+    {n:'札幌市',la:43.0618,lo:141.3545,d:'個人情報・強制加入 照会回答取得。',ic:bi},
+    {n:'函館市',la:41.7688,lo:140.7290,d:'資料収集対象',ic:oi},
   ];
   pts.forEach(p=>L.marker([p.la,p.lo],{icon:p.ic}).addTo(m).bindPopup(`<strong>${p.n}</strong><br>${p.d}`));
   </script>
