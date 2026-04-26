@@ -166,6 +166,20 @@
       .officer-pdf-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:560px){.officer-pdf-grid{grid-template-columns:1fr}}
+
+    .page-hero{position:relative;overflow:hidden;}
+    .page-hero-bg-img{
+      position:absolute;inset:0;z-index:0;
+    }
+    .page-hero-bg-img img{
+      width:100%;height:100%;object-fit:cover;
+      filter:brightness(.22) saturate(0.7);
+    }
+    .page-hero-bg-img::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(160deg,rgba(5,17,31,.85) 0%,rgba(5,17,31,.6) 60%,rgba(5,17,31,.4) 100%);
+    }
+    .page-hero-inner{position:relative;z-index:1;}
   </style>
 </head>
 <body>
@@ -264,6 +278,9 @@
   </div>
 
   <section class="page-hero">
+    <div class="page-hero-bg-img" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
     <div class="page-hero-inner">
       <div class="page-hero-kicker">For Officers</div>
       <h1>役員だからこそ、<br><em>今すぐ確認</em>すべきことがある。</h1>

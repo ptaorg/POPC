@@ -551,6 +551,12 @@
       .three-set { grid-template-columns: 1fr; }
       .related-link-grid { grid-template-columns: 1fr; }
     }
+
+    .page-hero{position:relative;overflow:hidden;}
+    .page-hero-bg-img{position:absolute;inset:0;z-index:0;}
+    .page-hero-bg-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.22) saturate(0.7);}
+    .page-hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(5,17,31,.85) 0%,rgba(5,17,31,.6) 60%,rgba(5,17,31,.4) 100%);}
+    .page-hero-inner{position:relative;z-index:1;}
   </style>
 </head>
 <body>
@@ -652,6 +658,9 @@
 
   <!-- Hero -->
   <section class="issue-hero">
+    <div class="page-hero-bg-img" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
     <div class="issue-hero-inner">
       <div>
         <div class="issue-hero-eyebrow">📋 Issue 01 — Membership</div>
@@ -1129,6 +1138,83 @@
       </div>
 
     </main>
+
+    <!-- ===== FAQ：よくある疑問 ===== -->
+    <section style="background:var(--bg);padding:72px 0">
+      <div style="width:min(calc(100% - 40px),860px);margin-inline:auto">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">よくある疑問</h2>
+        <div style="display:flex;flex-direction:column;gap:0;margin-top:32px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden">
+
+          <details style="border-bottom:1px solid var(--line)">
+            <summary style="padding:18px 22px;cursor:pointer;font-weight:800;font-size:.97rem;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center">
+              「入学と同時に自動でPTAに入ります」と説明されました。これは適法ですか？
+              <span style="color:var(--gold);flex-shrink:0;font-size:1.1rem">▼</span>
+            </summary>
+            <div style="padding:0 22px 18px;font-size:.93rem;color:var(--text);line-height:1.9;background:#fff">
+              適法ではありません。PTAへの入会は契約行為であり、民法第522条の「申込みと承諾」が必要です。入学という事実は入会の申込みにも承諾にも該当しません。兵庫県教育委員会も「みなし加入は不適切」と公式に回答しています。
+            </div>
+          </details>
+
+          <details style="border-bottom:1px solid var(--line)">
+            <summary style="padding:18px 22px;cursor:pointer;font-weight:800;font-size:.97rem;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center">
+              「断らなければ会員」という書類が届きました。これも無効ですか？
+              <span style="color:var(--gold);flex-shrink:0;font-size:1.1rem">▼</span>
+            </summary>
+            <div style="padding:0 22px 18px;font-size:.93rem;color:var(--text);line-height:1.9;background:#fff">
+              無効です。民法上、沈黙は承諾とみなされません（522条）。オプトアウト方式は行政機関等には認められておらず（個人情報保護法）、横浜市通知も明示的に禁止しています。「希望しない場合は申し出てください」という方式は法的根拠のない入会手続です。
+            </div>
+          </details>
+
+          <details style="border-bottom:1px solid var(--line)">
+            <summary style="padding:18px 22px;cursor:pointer;font-weight:800;font-size:.97rem;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center">
+              入会届を出した覚えがないのに会費が引き落とされています。返金を求められますか？
+              <span style="color:var(--gold);flex-shrink:0;font-size:1.1rem">▼</span>
+            </summary>
+            <div style="padding:0 22px 18px;font-size:.93rem;color:var(--text);line-height:1.9;background:#fff">
+              はい。入会契約が成立していない状態での会費徴収は、民法第703条の不当利得に該当します。消滅時効は5年（令和2年改正民法167条）。PTAと学校の双方に書面で返還を求めることができます。保護者向けテンプレートPDFを活用してください。
+            </div>
+          </details>
+
+          <details style="border-bottom:1px solid var(--line)">
+            <summary style="padding:18px 22px;cursor:pointer;font-weight:800;font-size:.97rem;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center">
+              PTAを退会したら子供が不利益を受けますか？
+              <span style="color:var(--gold);flex-shrink:0;font-size:1.1rem">▼</span>
+            </summary>
+            <div style="padding:0 22px 18px;font-size:.93rem;color:var(--text);line-height:1.9;background:#fff">
+              非会員であることを理由に子どもを不利益に扱うことは、憲法第26条（教育を受ける権利）・第14条（法の下の平等）に違反します。横浜市通知はこれを「人権侵害」として明示的に禁止しています。差別的取扱いが行われた場合は、教育委員会への申し立てが可能です。
+            </div>
+          </details>
+
+          <details style="border-bottom:1px solid var(--line)">
+            <summary style="padding:18px 22px;cursor:pointer;font-weight:800;font-size:.97rem;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center">
+              PTAの入会には書面の入会届が必ず必要ですか？
+              <span style="color:var(--gold);flex-shrink:0;font-size:1.1rem">▼</span>
+            </summary>
+            <div style="padding:0 22px 18px;font-size:.93rem;color:var(--text);line-height:1.9;background:#fff">
+              「書面」は必須ではありませんが、「明示的な申込みの意思表示」は必須です（民法522条）。書面（入会届）であれば証拠として明確であり、全国の教育委員会も「書面等による明示的な意思確認が必要」と回答しています。
+            </div>
+          </details>
+
+          <details>
+            <summary style="padding:18px 22px;cursor:pointer;font-weight:800;font-size:.97rem;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center">
+              PTAに加入しないと誰かが困りますか？
+              <span style="color:var(--gold);flex-shrink:0;font-size:1.1rem">▼</span>
+            </summary>
+            <div style="padding:0 22px 18px;font-size:.93rem;color:var(--text);line-height:1.9;background:#fff">
+              PTAは任意団体であり、非加入は完全に適法です。学校がPTAに依存している構造自体が問題であり、その解決は個々の保護者の「加入」ではなく、学校とPTAの完全分離によってのみ達成されます。「誰かが困るから加入する」という発想が、違法な構造を温存します。
+            </div>
+          </details>
+
+        </div>
+
+        <div style="margin-top:32px;text-align:center;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+          <a href="audit/index.html" class="btn-navy">⚙️ 監査システムで状況を診断する</a>
+          <a href="guide-parent.html#pdf-dl" class="btn-soft">📄 照会書テンプレートを使う</a>
+          <a href="board-responses.html" class="btn-soft">全国教委の公式回答を見る</a>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Footer -->

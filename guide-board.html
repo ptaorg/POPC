@@ -119,6 +119,20 @@
     }
 
     @media(max-width:900px){.duty-diagram{grid-template-columns:1fr;gap:16px}.duty-arrow{transform:rotate(90deg)}.scope-grid{grid-template-columns:1fr}.mou-compare{grid-template-columns:1fr}}
+
+    .page-hero{position:relative;overflow:hidden;}
+    .page-hero-bg-img{
+      position:absolute;inset:0;z-index:0;
+    }
+    .page-hero-bg-img img{
+      width:100%;height:100%;object-fit:cover;
+      filter:brightness(.22) saturate(0.7);
+    }
+    .page-hero-bg-img::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(160deg,rgba(5,17,31,.85) 0%,rgba(5,17,31,.6) 60%,rgba(5,17,31,.4) 100%);
+    }
+    .page-hero-inner{position:relative;z-index:1;}
   </style>
 </head>
 <body>
@@ -217,6 +231,9 @@
   </div>
 
   <section class="page-hero">
+    <div class="page-hero-bg-img" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
     <div class="page-hero-inner">
       <div class="page-hero-kicker">For School Boards</div>
       <h1>PTA問題は<br><em>行政の問題</em>です</h1>
@@ -559,6 +576,40 @@
             </div>
             <div class="faq-a" style="padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease"><p style="font-size:.93rem;color:var(--text);line-height:1.85;margin:0;padding-top:12px;border-top:1px solid var(--line)">移行期間を設けた段階的な分離が現実的です。①まず入会届の整備とPTA独自名簿の構築、②次にPTA専用口座の開設と会費徴収の分離、③最後に配布・印刷業務のPTAへの移管——の順で進めることで、混乱を最小化しながら適正化できます。横浜市通知もこうした段階的移行を想定した内容になっています。</p></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 即行動チェックリスト -->
+    <section style="background:linear-gradient(135deg,var(--navy),var(--navy-2));padding:72px 0;color:#fff">
+      <div style="width:min(calc(100% - 40px),860px);margin-inline:auto">
+        <div class="section-kicker" style="background:rgba(212,175,55,.15);color:var(--gold-lt)">Action Checklist</div>
+        <h2 class="section-title" style="color:#fff;margin-top:10px">今週中にやることリスト</h2>
+        <p style="color:rgba(255,255,255,.75);font-size:.95rem;line-height:1.8;margin-bottom:36px">「知っていたのに放置した」が最大のリスクです。まず現状把握から始めてください。</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.2);border-radius:var(--radius);padding:22px">
+            <div style="font-size:.72rem;font-weight:900;letter-spacing:.08em;color:var(--gold-lt);margin-bottom:14px">📋 今週中（確認）</div>
+            <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.85)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> 教職員がPTA事務を担っている実態を確認する</label>
+            <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.85)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> PTA会費が学校徴収金と同口座か確認する</label>
+            <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.85)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> 学校名簿がPTAに渡されているか確認する</label>
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.85)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> 入会届が存在するか・オプトインか確認する</label>
+          </div>
+          <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px">
+            <div style="font-size:.72rem;font-weight:900;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:14px">📅 今期中（対応）</div>
+            <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.7)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> PTA会長にオプトイン方式への移行を要請する</label>
+            <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.7)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> 渉外業務の範囲を書面（覚書）で明確化する</label>
+            <label style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.7)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> 教育委員会に現状を報告・相談する</label>
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.9rem;color:rgba(255,255,255,.7)"><input type="checkbox" style="margin-top:3px;accent-color:var(--gold)"> 是正計画を文書化して教委に提出する</label>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;padding:18px 22px;background:rgba(185,28,28,.15);border:1px solid rgba(252,165,165,.2);border-radius:var(--radius)">
+          <p style="color:rgba(252,165,165,.9);font-size:.9rem;margin:0;line-height:1.75"><strong>⚠️ 覚書があっても違法状態は解消されない</strong> — 入会契約なく会費を代行徴収する場合、「無効な契約の集金代行」になります。覚書・委任契約は責任の所在を明確にする一助にはなりますが、根本的な解決ではありません。</p>
+        </div>
+
+        <div style="margin-top:24px;text-align:center">
+          <a href="audit/index.html" class="btn-gold" style="font-size:.95rem;padding:14px 26px">学校管理職モードで監査診断する →</a>
         </div>
       </div>
     </section>

@@ -120,6 +120,20 @@
 
     @media(max-width:1000px){.response-grid{grid-template-columns:1fr 1fr}.yk-inner{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.response-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
+
+    .page-hero{position:relative;overflow:hidden;}
+    .page-hero-bg-img{
+      position:absolute;inset:0;z-index:0;
+    }
+    .page-hero-bg-img img{
+      width:100%;height:100%;object-fit:cover;
+      filter:brightness(.22) saturate(0.7);
+    }
+    .page-hero-bg-img::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(160deg,rgba(5,17,31,.85) 0%,rgba(5,17,31,.6) 60%,rgba(5,17,31,.4) 100%);
+    }
+    .page-hero-inner{position:relative;z-index:1;}
   </style>
 </head>
 <body>
@@ -218,6 +232,9 @@
   </div>
 
   <section class="page-hero">
+    <div class="page-hero-bg-img" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.parentElement.style.display='none'">
+    </div>
     <div class="page-hero-inner">
       <div class="page-hero-kicker">Evidence</div>
       <h1>全国の教育委員会が<br><em>「強制は違法」</em>と回答しています</h1>
@@ -313,18 +330,25 @@
 
         <div class="response-grid" id="responseGrid">
 
-          <!-- ✅ 静岡市：最も明確な適正化対応 -->
-          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
+          <!-- 静岡市：照会回答→違反発覚という逆転劇 -->
+          <div class="response-card" data-type="jishu" style="border-top:4px solid #b91c1c;background:linear-gradient(145deg,#fff,#fff5f5)">
             <div class="rc-header">
               <div class="rc-region">静岡市教育委員会</div>
-              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 完全分離済</span>
+              <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">
+                <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 回答：完全分離済</span>
+                <span style="background:#fee2e2;color:#b91c1c;font-size:.68rem;font-weight:900;padding:2px 8px;border-radius:4px">🚨 2026/04 違反発覚</span>
+              </div>
             </div>
             <div class="rc-body">
-              <strong style="display:block;color:#14532d;margin-bottom:8px">「PTA会費は学校徴収金から除外。教職員の関与ゼロ。公務外」</strong>
-              問1：PTA会費は学校徴収金から除外しており、勤務時間中における教職員の関与はありません。問2：公務として取り扱っておりません。問3：公的資源は利用していません。問7：公務外であるため関与していません。
+              <strong style="display:block;color:#14532d;margin-bottom:8px">【照会回答（令和8年3月）】「PTA会費は学校徴収金から除外。教職員の関与ゼロ。公務外」</strong>
+              問1：PTA会費は学校徴収金から除外しており、勤務時間中における教職員の関与はありません。問2：公務として取り扱っておりません。問7：公務外であるため関与していません。
+              <div style="margin-top:12px;padding:12px;background:#fff5f5;border:1px solid #fecaca;border-radius:8px">
+                <strong style="color:#b91c1c;font-size:.88rem">【2026年4月21日 報道】9,200人分の個人情報が無断でPTAに提供されていたことが発覚</strong>
+                <p style="font-size:.84rem;color:#374151;margin:6px 0 0;line-height:1.7">市内20校で保護者の同意なく名簿を提供。教育長「法律と学校文化にずれ」と認める。<br>※会費徴収の適正化と個人情報管理は別問題として同時進行が必要なことを示す事例。</p>
+              </div>
             </div>
-            <div><span class="rc-topic">会費徴収</span><span class="rc-topic">職務専念義務</span><span class="rc-topic">完全分離</span></div>
-            <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+            <div><span class="rc-topic">会費徴収</span><span class="rc-topic">個人情報違反</span><span class="rc-topic">構造的問題</span></div>
+            <div class="rc-source">令和8年3月 照会回答 / 令和8年4月 SBS報道 <a href="shizuoka-incident.html">事案分析を読む →</a></div>
           </div>
 
           <!-- ✅ 厚木市：自主徴収が最もふさわしいと明言 -->
