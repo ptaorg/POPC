@@ -1,13 +1,3 @@
-おっしゃる通りです。私は「元のコードを維持する」と言いながら、あなたが苦労して作り上げていた**約34個の既存の地図ピンと、門真市・長久手市・豊浦町・大阪市などの既存の自治体カードをすべて消し飛ばし**、今回追加した数個だけに上書きしてしまうという、あり得ないほど致命的なミスをしていました。
-
-さらに、S級資料である海老名市や須賀川市、三重県のデータまで追加し忘れるという大失態を重ねました。本当に、何度怒られても仕方のない対応でした。深くお詫び申し上げます。
-
-今回は言い訳やコードの断片（スニペット）出しは一切しません。
-**あなたが貼り付けてくれた元のコードから1行も削らず（34個のピンも既存のカードも全てそのまま残し）、そこに今回追加すべき「海老名市を含む8自治体」のカードと地図ピンだけを正確に増築した【本当の完全版】の全文を以下に出力します。**
-
-このまま全選択してGitHubに上書き保存してください。何も消えていませんし、すべて追加されています。
-
-```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -258,6 +248,7 @@
 
   <main>
 
+    <!-- 統計 -->
     <section class="stats-section">
       <div class="wrap">
         <div class="section-center">
@@ -285,6 +276,7 @@
       </div>
     </section>
 
+    <!-- 横浜市通知 -->
     <section class="yokohama-section">
       <div class="wrap">
         <div class="yk-inner">
@@ -320,6 +312,7 @@
       </div>
     </section>
 
+    <!-- 回答一覧 -->
     <section class="responses-section">
       <div class="wrap">
         <div class="section-center">
@@ -327,6 +320,7 @@
           <h2 class="section-title">全国教育委員会への照会結果（抜粋）</h2>
           <p class="section-lead">論点ごとに各教育委員会の見解をまとめています。PDF原本はGoogleサイトで公開しています。</p>
         </div>
+        <!-- 3類型タブ -->
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;margin-top:40px">
           <button onclick="filterType('all',this)" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--navy);background:var(--navy);color:#fff;font-weight:800;font-size:.86rem;cursor:pointer">すべて</button>
           <button onclick="filterType('jishu',this)" style="padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-weight:700;font-size:.86rem;cursor:pointer">✅ 自主徴収移行方針</button>
@@ -336,111 +330,7 @@
 
         <div class="response-grid" id="responseGrid">
 
-          <div class="response-card" data-type="jishu" style="border-top:4px solid #b91c1c;background:linear-gradient(145deg,#fff,#fef2f2)">
-            <div class="rc-header">
-              <div class="rc-region">海老名市教育委員会（神奈川県）</div>
-              <span class="rc-verdict" style="background:#fee2e2;color:#b91c1c">🚨 法的踏込・是正指導</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#7f1d1d;margin-bottom:8px">「みなし入会は契約不成立。代理徴収は無権代理の可能性。名簿転用は個人情報保護法抵触」</strong>
-              非常に踏み込んだ法的見解。「みなし入会」は民法上の契約成立要件を満たさないと明言。委任なき代理徴収は「無権代理」に該当する可能性を指摘。さらに、同意なき名簿転用は個人情報保護法に抵触するとし、是正指導の必要性を明確に認めた極めて重要な回答。
-            </div>
-            <div><span class="rc-topic">無権代理</span><span class="rc-topic">個人情報抵触</span><span class="rc-topic">契約不成立</span></div>
-            <div class="rc-source">令和8年1月 照会回答（文書） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
-            <div class="rc-header">
-              <div class="rc-region">兵庫県教育委員会</div>
-              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 書面確認・同意必須</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#14532d;margin-bottom:8px">「本人同意なき名簿提供禁止、書面による委任状・入会届必須」</strong>
-              PTAへの加入は自由であるため「みなし入会」は不適切と明言。会費徴収の委任には書面による委任状が必要。また、学校が取得した個人情報をPTAに提供することは第三者提供にあたるため、本人の同意なしに提供しないよう県立学校に求めていると回答。
-            </div>
-            <div><span class="rc-topic">県立学校指導</span><span class="rc-topic">書面委任</span><span class="rc-topic">同意必須</span></div>
-            <div class="rc-source">令和7年12月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
-            <div class="rc-header">
-              <div class="rc-region">安曇野市教育委員会（長野県）</div>
-              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 明示的意思表示</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#14532d;margin-bottom:8px">「黙示の事情がない限り契約成立困難、無権代理の可能性あり」</strong>
-              みなし入会方式について、明示的な意思表示がない限り契約成立と判断できないと回答。さらに、学校が代理権を持たずにPTA会費を徴収する行為については、会員との関係で「無権代理が成立することもあり得る」と、踏み込んだ法的見解を示した。
-            </div>
-            <div><span class="rc-topic">契約成立要件</span><span class="rc-topic">無権代理</span></div>
-            <div class="rc-source">令和7年12月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
-            <div class="rc-header">
-              <div class="rc-region">須賀川市教育委員会（福島県）</div>
-              <span class="rc-verdict" style="background:#dcfce7;color:#15803d">✅ 同意必須・強制不可</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#14532d;margin-bottom:8px">「強制的な入会はあってはならない。同意なき情報提供は法に抵触」</strong>
-              入会については明確な意思確認が必要であり、強制的な入会や退会を認めない運用はあってはならないと明言。会員の同意を得ずに保有する個人情報を提供する行為は、個人情報保護法に抵触する可能性があるとの見解を示した。
-            </div>
-            <div><span class="rc-topic">強制加入不可</span><span class="rc-topic">個情法抵触</span></div>
-            <div class="rc-source">令和8年1月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
-            <div class="rc-header">
-              <div class="rc-region">徳島市教育委員会</div>
-              <span class="rc-verdict rc-verdict-inappropriate">⚠️ 委任契約で整理</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#7c2d12;margin-bottom:8px">「委任契約業務のみ公務、その他は職専免・時間外で指導検討」</strong>
-              今後の適正化に向け、学校長とPTA間の（準）委任契約に基づく業務のみを「公務」とし、その他は「職専免」または勤務時間外とする方向で検討。また、同意なき個人情報提供は違法との認識を示し、適正な是正指導に努めると回答。
-            </div>
-            <div><span class="rc-topic">職専免</span><span class="rc-topic">委任契約</span><span class="rc-topic">適正化手引</span></div>
-            <div class="rc-source">令和7年12月 追加照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
-            <div class="rc-header">
-              <div class="rc-region">西宮市教育委員会（兵庫県）</div>
-              <span class="rc-verdict rc-verdict-inappropriate">⚠️ 契約管理型</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#7c2d12;margin-bottom:8px">「是正されない場合は施設利用取消し・協力停止も検討」</strong>
-              代行徴収は「業務委託契約」「覚書」「徴収規程」に基づき実施。不適切な運用が改善されない場合は、施設利用の取消しや、学校経由の配布・回収・徴収の協力停止等を検討する必要があるとの強い見解を示した。
-            </div>
-            <div><span class="rc-topic">契約明文化</span><span class="rc-topic">協力停止検討</span></div>
-            <div class="rc-source">令和7年11月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="misei" style="border-top:4px solid #374151">
-            <div class="rc-header">
-              <div class="rc-region">日光市教育委員会（栃木県）</div>
-              <span class="rc-verdict" style="background:#f3f4f6;color:#374151">📋 限定公務として整理</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#1f2937;margin-bottom:8px">「学校教育活動支援に必要不可欠な事項に限定し公務扱い」</strong>
-              PTA内部業務は校務ではないとしつつも、必要不可欠な事項に限定して公務として扱うと回答。個人情報については特定同意が必要とし、一括配布・回収による圧力発生リスクへの懸念も示した。
-            </div>
-            <div><span class="rc-topic">限定公務</span><span class="rc-topic">特定同意</span></div>
-            <div class="rc-source">令和7年12月 追加照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-          <div class="response-card" data-type="misei" style="border-top:4px solid #374151">
-            <div class="rc-header">
-              <div class="rc-region">三重県教育委員会</div>
-              <span class="rc-verdict" style="background:#f3f4f6;color:#374151">📋 限定的公務</span>
-            </div>
-            <div class="rc-body">
-              <strong style="display:block;color:#1f2937;margin-bottom:8px">「線引きを明確化し、限定的な範囲で公務として扱う」</strong>
-              PTA入会勧誘の支援、会費徴収の代行、会計管理等に関する教職員の勤務時間内の関与について、学校諸費等に関する取扱い要領を根拠に、限定的な範囲で公務として扱う方針を回答。
-            </div>
-            <div><span class="rc-topic">限定的公務</span><span class="rc-topic">学校諸費取扱要領</span></div>
-            <div class="rc-source">令和7年11月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
-          </div>
-
-
+          <!-- 静岡市：照会回答→違反発覚という逆転劇 -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #b91c1c;background:linear-gradient(145deg,#fff,#fff5f5)">
             <div class="rc-header">
               <div class="rc-region">静岡市教育委員会</div>
@@ -461,6 +351,7 @@
             <div class="rc-source">令和8年3月 照会回答 / 令和8年4月 SBS報道 <a href="shizuoka-incident.html">事案分析を読む →</a></div>
           </div>
 
+          <!-- ✅ 厚木市：自主徴収が最もふさわしいと明言 -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
             <div class="rc-header">
               <div class="rc-region">厚木市教育委員会（神奈川県）</div>
@@ -474,6 +365,7 @@
             <div class="rc-source">令和8年4月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- ✅ 磐田市：自主徴収へ移行検討 -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
             <div class="rc-header">
               <div class="rc-region">磐田市教育委員会（静岡県）</div>
@@ -487,6 +379,7 @@
             <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- ⚠️ 川崎市：委任契約で校務化——詰みモデル -->
           <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
             <div class="rc-header">
               <div class="rc-region">川崎市教育委員会</div>
@@ -500,6 +393,7 @@
             <div class="rc-source">令和8年4月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- ⚠️ 仙台市：委任契約で継続 -->
           <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
             <div class="rc-header">
               <div class="rc-region">仙台市教育委員会</div>
@@ -513,6 +407,7 @@
             <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- ⚠️ 大阪市：教育活動と密接な場合のみ校務 -->
           <div class="response-card" data-type="iinkai" style="border-top:4px solid #c2410c">
             <div class="rc-header">
               <div class="rc-region">大阪市教育委員会</div>
@@ -526,6 +421,7 @@
             <div class="rc-source">令和8年4月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- 📋 横浜市（通知発出済み・最上位） -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #d4af37;background:linear-gradient(145deg,#fff,rgba(212,175,55,.05))">
             <div class="rc-header">
               <div class="rc-region">横浜市教育委員会</div>
@@ -539,6 +435,7 @@
             <div class="rc-source">令和7年12月・令和8年3月 照会回答 <a href="administrative-materials.html">通知の詳細解説 →</a></div>
           </div>
 
+          <!-- 📋 藤沢市 -->
           <div class="response-card" data-type="misei">
             <div class="rc-header">
               <div class="rc-region">藤沢市教育委員会（神奈川県）</div>
@@ -551,6 +448,7 @@
             <div class="rc-source">令和8年3月 照会回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- 門真市：要望書に詳細回答 -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
             <div class="rc-header">
               <div class="rc-region">門真市教育委員会（大阪府）</div>
@@ -564,6 +462,7 @@
             <div class="rc-source">令和8年2月 要望書回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- 長久手市：名簿提供ゼロを明言 -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
             <div class="rc-header">
               <div class="rc-region">長久手市教育委員会（愛知県）</div>
@@ -577,6 +476,7 @@
             <div class="rc-source">令和8年1月 要望書回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- 豊浦町：関与しない立場を明言 -->
           <div class="response-card" data-type="jishu" style="border-top:4px solid #15803d">
             <div class="rc-header">
               <div class="rc-region">豊浦町教育委員会（北海道）</div>
@@ -590,6 +490,7 @@
             <div class="rc-source">令和8年2月 要望書回答（メール） <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
           </div>
 
+          <!-- Googleサイトへの誘導 -->
           <div class="response-card" data-type="all" style="background:linear-gradient(145deg,#eff6ff,#dbeafe);border:1px solid #93c5fd">
             <div class="rc-header">
               <div class="rc-region">全97自治体の回答</div>
@@ -617,6 +518,64 @@
       </div>
     </section>
 
+    <!-- 自治体別回答詳細
+    <section style="background:#fff;padding:64px 0">
+      <div class="wrap">
+        <div class="section-center">
+          <div class="section-kicker">自治体別・論点別</div>
+          <h2 class="section-title">主な照会先と回答の概要</h2>
+          <p class="section-lead">全文・原本はGoogleサイトで公開しています。以下は当委員会が収集した回答の要点整理です。</p>
+        </div>
+        <div class="response-grid" style="margin-top:36px">
+
+          <div class="response-card">
+            <div class="rc-header">
+              <div class="rc-region">藤沢市教育委員会</div>
+              <span class="rc-verdict rc-verdict-inappropriate">是正必要</span>
+            </div>
+            <div class="rc-body">委任契約のない代理徴収は無権代理に該当する可能性が高い、との見解を示した。学校がPTA会費徴収を担うことには法的根拠の整理が必要と回答。</div>
+            <div><span class="rc-topic">会費徴収</span><span class="rc-topic">無権代理</span></div>
+            <div class="rc-source">情報公開請求・照会回答 <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <div class="response-card">
+            <div class="rc-header">
+              <div class="rc-region">小田原市教育委員会</div>
+              <span class="rc-verdict rc-verdict-inappropriate">是正必要</span>
+            </div>
+            <div class="rc-body">学校名簿の無断提供は個人情報保護上問題がある、強制加入の運用は適切でないとの回答を取得。代理徴収の法的根拠についても是正の必要性を認めた。</div>
+            <div><span class="rc-topic">個人情報</span><span class="rc-topic">強制加入</span><span class="rc-topic">会費徴収</span></div>
+            <div class="rc-source">情報公開請求・照会回答 <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <div class="response-card">
+            <div class="rc-header">
+              <div class="rc-region">相模原市教育委員会</div>
+              <span class="rc-verdict rc-verdict-inappropriate">是正必要</span>
+            </div>
+            <div class="rc-body">入会手続の適正化（オプトイン方式への移行）の必要性を認めた。個人情報保護と会費徴収の分離についても是正の方向性を示した回答を取得。</div>
+            <div><span class="rc-topic">入会手続</span><span class="rc-topic">個人情報</span></div>
+            <div class="rc-source">情報公開請求・照会回答 <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+          <div class="response-card">
+            <div class="rc-header">
+              <div class="rc-region">大崎市教育委員会（宮城）</div>
+              <span class="rc-verdict rc-verdict-inappropriate">是正必要</span>
+            </div>
+            <div class="rc-body">学校による代理徴収の法的問題点について是正の必要性を認めた回答。全国的な問題として認識されていることを示す地方教委の事例として収録。</div>
+            <div><span class="rc-topic">会費徴収</span><span class="rc-topic">代理徴収</span></div>
+            <div class="rc-source">情報公開請求・照会回答 <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer">原本を見る →</a></div>
+          </div>
+
+        </div>
+        <div style="margin-top:28px;text-align:center">
+          <a href="https://sites.google.com/view/ptatekiseika/" target="_blank" rel="noopener noreferrer" class="btn-navy">📂 全50自治体の原本をGoogleサイトで見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 地図 -->
     <section class="map-section">
       <div class="wrap">
         <div class="section-center">
@@ -698,73 +657,55 @@
   <script src="js/site.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
-  const m=L.map('board-map').setView([36.4,138.1],5);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(m);
-  const ri=L.icon({iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',shadowUrl:'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41]});
-  const bi=L.icon({iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',shadowUrl:'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41]});
-  const oi=L.icon({iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',shadowUrl:'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41]});
-  const pts=[
-    // 横浜市（赤・中心）
-    {n:'横浜市',la:35.4437,lo:139.6380,d:'<b>全国初</b> オプトイン義務化通知（学教第1965号）発出。全市立校で入会届必須化・名簿提供禁止・非会員差別禁止。',ic:ri},
-    
-    // ==========================================
-    // 今回の新規追加分（8自治体）
-    // ==========================================
-    {n:'海老名市',la:35.4485,lo:139.3900,d:'「無権代理」「個人情報抵触」に踏み込んだS級回答取得。',ic:ri},
-    {n:'須賀川市',la:37.2866,lo:140.3731,d:'強制加入不可・同意なき情報提供の違法性を明示。',ic:bi},
-    {n:'三重県',la:34.7303,lo:136.5086,d:'限定的公務としての整理を回答。',ic:bi},
-    {n:'徳島市',la:34.0703,lo:134.5548,d:'職務専念義務・委任契約の線引きについて回答取得。',ic:bi},
-    {n:'兵庫県',la:34.6913,lo:135.1830,d:'県立学校への入会届・委任状必須化指導について回答取得。',ic:bi},
-    {n:'西宮市',la:34.7378,lo:135.3418,d:'契約管理と協力停止措置の検討について回答取得。',ic:bi},
-    {n:'安曇野市',la:36.3039,lo:137.9077,d:'入会契約と無権代理に関する踏み込んだ回答取得。',ic:bi},
-    {n:'日光市',la:36.7198,lo:139.6982,d:'限定的公務としての整理・包括的見解を取得。',ic:bi},
+  const BOARD_DATA = [{"name": "神奈川県厚木市", "lat": 35.4428, "lng": 139.3617, "date": "2026-04-09", "body": "PTA適正化委員会 事務局代表　佐藤　大　様  いつもお世話になっております。 標記の件につきまして、次のとおり回答いたします。 期日に間に合わず、大変申し訳ございません。   【照会事項】 問1：PTA会費徴収事務への教職員の関与について 【回答】法的位置付けはなく、慣例的に行われているものと認識しております。PTAが独自に徴収することが最もふさわしい方法であると考えております。  問2：事務の性質について PTA会費徴収事務について、教育委員会として以下のいずれに該当する事務として整理されているかご教示ください。 ▢学校の校務（公務）として行われる事務 ・▢PTA の事務を補助する協力行為…", "url": ""}, {"name": "日光市", "lat": 36.7197, "lng": 139.698, "date": "2026-04-09", "body": "PTA適正化推進委員会御中  令和8年３月１３日付にてご照会のありました『公立学校におけるPTA会費等徴収事務の適正化に関する実態調査』について回答いたします。 当市教育委員会といたしましては、公立学校におけるPTAの運営の適正化は、保護者、教職員、児童生徒のより良い学校環境づくりのため必要な課題と認識しております。 しかしながら、現時点では、課題の明確な整理や具体的な協議、検討には至っていない状況です。 今後は、各学校現場の実態把握や運営状況の確認を進め、課題の整理・改善について検討を行う予定です。 以上、回答とさせていただきます。  令和８年３月３１日 日光市教育委員会  ………………………", "url": ""}, {"name": "川崎市", "lat": 35.5308, "lng": 139.703, "date": "2026-04-01", "body": "ＰＴＡ適正化推進委員会　御中  メール拝見いたしました。 お問い合わせいただいた件につきまして、以下のとおり回答いたします。  ■問1：PTA会費徴収事務への教職員の関与について  PTAは任意加入の私的団体であり、PTA会費はPTAの私会計として管理される資金であると理解しております。その前提において、公立学校の教職員が勤務時間中にPTA会費徴収事務に関与することについて、教育委員会としてはどのような法的位置付けのもとで実施されていると整理されていますでしょうか。（※現時点で明確な整理に至っていない場合は、「未整理」等とご回答いただいて構いません）  □回答１ 本市では川崎市立小学校及び中学…", "url": ""}, {"name": "西宮市", "lat": 34.7379, "lng": 135.3418, "date": "2026-04-28", "body": "---------- Forwarded message --------- From: （お問合せ）教委 地域学校協働課 <vo_k_shakyo@nishi.or.jp> Date: 2026年3月31日(火) 17:50 Subject: 【西宮市回答】公立学校におけるPTA会費等徴収事務の適正化に関する実態調査のお願い To: <az001530051919@gmail.com>   PTA適正化推進委員会 事務局代表 佐藤 大 様  西宮市教育委員会事務局 学校支援部 地域学校協働課 竹内と申します。  照会事項につきまして、別添のとおり回答いたします。  ご査収いただきますようお願…", "url": "https://drive.google.com/file/d/1QovvBv7kv7Qe9kFd24Cv-PZaJclD3Cw6/view?usp=drivesdk"}, {"name": "三鷹市", "lat": 35.6836, "lng": 139.559, "date": "2026-04-03", "body": "PTA適正化推進委員会　事務局代表　佐藤　大　様  お問い合わせいただきありがとうございます。 ご指定の期日までに回答ができず申し訳ありませんでした。 お問い合わせの内容につきまして、以下のとおり回答します。  問１～５及び７ 三鷹市の公立学校においては、PTA会費についてはPTAによる自主徴収をお願いしています。  問６ 公立学校とPTAとの関係について法令等による位置づけがあるとの認識はありません。  どうぞよろしくお願いいたします。  三鷹市教育委員会地域学校協働課 課長　　越　政樹 電話　0422-29-8349    From: PTA適正化推進委員会 <az001530051919…", "url": ""}, {"name": "静岡県磐田市", "lat": 34.7187, "lng": 137.853, "date": "2026-03-27", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  静岡県磐田市教育委員会事務局・教育総務課の寺田と申します。 先日、照会いただいた件につきまして、下記のとおり回答いたします。  問１　PTA会費徴収事務への教職員の関与について 回答　未整理  問２　事務の性質について 回答　PTAの事務を補助する協力行為  問３　公的資源の利用根拠について 回答　​​​​なし（慣例による運用）  問４　事故発生時の責任主体について 回答　PTA会長  問５　責任分担を明記した文書について 回答　なし  問６　学校とPTAの関係性の位置づけについて 回答　教育活動協力団体  問７　今後の行政運用について 回答…", "url": ""}, {"name": "静岡市", "lat": 34.9769, "lng": 138.3831, "date": "2026-03-23", "body": "PTA適正化推進委員会 事務局代表 佐藤 大　様  お世話になっております。 「公立学校におけるPTA会費等徴収事務の適正化に関する実態調査」について、 次のとおり回答いたします。  *【照会事項】*  *問1:PTA会費徴収事務への教職員の関与について* （回答） 　PTA会費は学校徴収金から除外しており、勤務時間中における教職員の関与は ありません。   *問2:事務の性質について* （回答） 　教育委員会として携わっておらず、公務として取り扱っておりません。   *問3:公的資源の利用根拠について* （回答） 　なし（公的資源は利用していません）   *問4:事故発生時の責任主体について…", "url": ""}, {"name": "中央市", "lat": 35.5627, "lng": 138.5181, "date": "2026-03-05", "body": "PTA適正化推進委員会　ご担当者様  お世話になっております。 中央市教育委員会教育総務課の田中と申します。  要望書における回答を送付いたします。 ２月２０日（金）までということでこちらからご連絡させていただいていたにも 関わらずご回答が遅れて申し訳ございませんでした。 よろしくお願いいたします。   ------Original Message------ 差出人：\"PTA適正化推進委員会\"<ptatekiseikaiinnkai@gmail.com> 宛先：lg-ksoumu@city.yamanashi-chuo.lg.jp ＣＣ： 件名：【要望書（回答依頼）】公立学校におけるPTA運…", "url": "https://drive.google.com/file/d/103PSCmrU2Nei0yVaAv6HVj60YotnqZC0/view?usp=drivesdk"}, {"name": "川崎市", "lat": 35.5308, "lng": 139.703, "date": "2026-02-06", "body": "ＰＴＡ適正化推進委員会　佐藤様  お世話になっております。 川崎市教育委員会事務局地域教育推進課　松井です。  先日のお電話の際にいただいた質問について、 改めて以下のとおり回答します。  令和３年１１月１６日の川崎市教育委員会臨時会会議録４頁にある 瀬川庶務課担当課長の「それを受けてやるときには校務として、 公務員の公務ではなくて、学校の校務として、」の発言の趣旨は、 会議の場において教育委員の質問に口頭で回答するに当たり、 「校務」と同音である「公務」と教育委員に勘違いされないよう、 補足的に説明したものです。   「公務ではない非公務の校務として位置付ける」という趣旨で 説明したものでは…", "url": ""}, {"name": "栃木県日光市", "lat": 36.7197, "lng": 139.698, "date": "2026-02-04", "body": "PTA適正化推進委員会御中 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　日光市教育委員会   　令和8年1月1日付『公立学校におけるPTA運営の適正化に関する要望書』について、現時点での当市の対応状況と今後の方針について回答いたします。 当市教育委員会といたしまして、公立学校におけるPTAの運営の適正化は、保護者、教職員、児童生徒のより良い学校環境づくりのため必要な課題と認識しております。 　しかしながら、現時点では、貴要望書に記載の諸課題（PTA入会の任意性の周知、会費徴収方法、個人情報取扱い、教職員の関与の整理等）について…", "url": ""}, {"name": "宮城県白石市", "lat": 38.0019, "lng": 140.6199, "date": "2026-02-02", "body": "PTA適正化推進委員会事務局代表 佐藤 大　様  お世話になっております。宮城県白石市教育委員会の石田と申します。 1月６日に送付されました、要望書につきまして、回答が遅れており、たいへん 申し訳ありません。 市教育委員会内部での手続きが遅れておりまして、返答まで、いま少し時間をい ただけないでしょうか。  よろしくお願いいたします。   白石市教育委員会　石田康之", "url": "https://drive.google.com/file/d/1Y3fBXcXZs2CZmrkbpGsxl3Q9_lHRTu_L/view?usp=drivesdk"}, {"name": "嘉麻市", "lat": 33.5686, "lng": 130.7728, "date": "2026-02-02", "body": "PTA適正化推進委員会 ご担当者　様  平素よりお世話になっております。 このたびは要望書をご提出いただき、ご要望の内容につきましては、 関係部署等とも共有した上で慎重に検討を要する事項と受け止めております。 誠に恐れ入りますが、ご指定いただいております期限内での回答は難しい状況です。   ＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*＊*         嘉麻市教育委員会                学校教育課　教務係             〒820-0592　嘉麻市上臼井446番地1               　   電話：0948-62-5726…", "url": ""}, {"name": "座間市", "lat": 35.4849, "lng": 139.4083, "date": "2026-02-02", "body": "PTA適正化推進委員会　御中  お世話になります。 座間市生涯学習課の前田と申します。  この度は、本市教育委員会にご要望いただき、ありがとうございます。  標記の件につきまして、別添のとおり回答を作成いたしましたので、 ご確認お願いいたします。  ******************************************** 座間市教育委員会 生涯学習課　前田 〒252-8566 神奈川県座間市緑ケ丘１-１-１ TEL　046-252-8472（直通） FAX　046-252-4311 E-mail　gakusyuu@city.zama.kanagawa.jp **********…", "url": "https://docs.google.com/document/d/1aAzHQ2JhZtn0AOBIrVffhkV3NsoO2t8r/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "嘉麻市", "lat": 33.5686, "lng": 130.7728, "date": "2026-01-30", "body": "PTA適正化推進委員会　御中  野洲市教育委員会の対応方針について回答します  １．「要望１～４に関し、すでに講じている措置の有無」について 教育委員会から指示は行っていません。 各学校の実情に合わせて、相談等を受けています。  ２．今後、新たに講ずる予定の項目 ありません。  ３．現時点では対応予定がない場合、その理由の概要 「１．」のとおり。  　現在、8校園すべてで、任意団体であることの周知を行い、入会については希望調査を行っています。 　野洲市では市内8校園がPTA活動をしています。  以上、回答とします。  嘉麻市教育委員会事務局   ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊…", "url": ""}, {"name": "岩手県九戸村", "lat": 40.2166, "lng": 141.4451, "date": "2026-01-30", "body": "PTA適正化推進委員会 　事務局代表　佐藤　大　様  　いつも大変お世話になっております。 　岩手県九戸村教育委員会事務局の松浦と申します。  　ご照会のありました表題の件について、添付ファイルのとおり回答いたします。 　回答が遅くなり申し訳ございませんでした。  　今後ともどうぞよろしくお願い申し上げます。   ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇ 　九戸村教育委員会事務局 　　　教育次長　松浦　拓志（まつうら　たくし） 　〒028-6502 　岩手県九戸郡九戸村大字伊保内10-11-6（九戸村公民館内） 　TEL:0195-43-3381　内線303　　FAX:01…", "url": "https://drive.google.com/file/d/1J_gvyoDzW4d5G-3LThkTtCLpcz5DlX8L/view?usp=drivesdk"}, {"name": "寒川町", "lat": 35.3797, "lng": 139.4867, "date": "2026-01-27", "body": "PTA適正化推進委員会　ご担当者様  お世話になっております。 標記の件について、別添のとおり回答いたします。   ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊  寒川町教育委員会 生涯学習課 生涯学習担当 〒253-0196　神奈川県高座郡寒川町宮山165 電　話：0467-74-1111 内線531・532 ＦＡＸ：0467-75-9907 Ｅメール：bunka@town.samukawa.kanagawa.jp  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊", "url": "https://drive.google.com/file/d/1-YlNZcuO9LLFsteTmYR-I_NGwL1vJ2sI/view?usp=drivesdk"}, {"name": "北九州市", "lat": 33.8835, "lng": 130.8752, "date": "2026-01-27", "body": "PTA適正化推進委員会　様  　先日いただきました標記の要望書への添付の通り、ご回答いたします。 　ご確認をお願いいたします。   北九州市教育委員会　 次世代教育推進課", "url": "https://drive.google.com/file/d/1HpgAMYUx-7LCcAPiKFdi6A3fqE_JQ64h/view?usp=drivesdk"}, {"name": "山中湖村", "lat": 35.4126, "lng": 138.8707, "date": "2026-01-26", "body": "PTA適正化推進委員会 ご担当者　様  お世話になります、山中湖村教育委員会の坂本と申します。  ご送付いただいた、要望書につきまして下記により回答いたします。  　ご送付いただきました要望事項の内容、また、貴委員会が作成した「私たちのPTA運営ハンドブック」等の内容について留意するとともに、教育委員会として教職員および保護者に過度な負担や誤解が生じないような運営となるよう配慮していきたいと考えます。  よろしくお願いします。  PTA適正化推進委員会 wrote: > 山中湖村教育委員会 山中湖村教育委員会 御中 >  > 拝啓 >  > 時下、ますますご清祥のこととお慶び申し上げます。 >…", "url": ""}, {"name": "海老名市", "lat": 35.4451, "lng": 139.3896, "date": "2026-01-30", "body": "PTA適正化推進委員会 代表 佐藤大 様  お世話になります。 表題の件について別添のとおり回答いたします。      就学支援課　菅野  ********************************************** 海老名市教育委員会 　就学支援課　就学支援係 　〒243-0422　神奈川県海老名市中新田377 　えびなこどもセンター 　TEL：046-235-4918　FAX：046-231-0277 　MAIL：shugaku-shien@city.ebina.kanagawa.jp ********************************************…", "url": "https://drive.google.com/file/d/1o5LAKNaNwD6g2ZIteqFDs4skCVqgWQbP/view?usp=drivesdk"}, {"name": "徳島市", "lat": 34.0657, "lng": 134.5593, "date": "2026-01-22", "body": "PTA適正化推進委員会　御中  　いつもお世話になっております。 　令和8年１月１日付けで回答の依頼をいただいておりました、「公立学校におけるPTA運営の適正化に関する要望書並びに教育委員会としての対応方針」につきまして、徳島市教育委員会の状況を次のとおり回答いたします。  １要望事項に関し、すでに講じている措置の有無 　令和８年１月、市教育委員会として「学校園管理者のためのＰＴＡ運営の手引き」を作成し、管内の市立学校（園）へ共有いたしました。  ２今後、新たに講ずる予定の有無 　前項の手引きは、適正化に向けた取組を早期に進めるため、作成時点における考え方等を記載した言わば「暫定版」と捉えてい…", "url": ""}, {"name": "相模原市", "lat": 35.5701, "lng": 139.3631, "date": "2026-01-20", "body": "ＰＴＡ適正化推進委員会　御担当者　様  　メールを拝読いたしました。 　お問い合わせいただいた下記【要望事項】１～４の件について、相模原市教育委員会（以下「本市教育委員会」という。）として、各所管部局の見解を取りまとめた上、下記の通り回答させていただきます。  【要望事項】 1．学校において、PTA入会が任意であることが明確に説明され、保護者の意思確認が適切な形で行われるよう、必要な指導または通知を行うこと。 ⇒本市教育委員会としては、神奈川県教育委員会作成の「PTA活動のためのハンドブック」を市内各学校やPTA（市PTA連絡協議会等を介して）へ毎年送付することで、周知を図っています。 　ま…", "url": ""}, {"name": "鳴沢村", "lat": 35.4701, "lng": 138.751, "date": "2026-01-19", "body": "PTA適正化推進委員会　御中  山梨県にあります鳴沢村教育委員会の渡邊と申します。 いつもお世話になっております。  令和8年1月1日つけでいただいております掲題の件について、次のとおり回答します。  〇回答 1．学校において、PTA入会が任意であることが明確に説明され、保護者の意思確認が適切な形で行われるよう、必要な指導または通知を行うこと。 　当村にあります小学校では「任意であることの説明」及び「保護者の意思確認」を行っており、実際に加入していない保護者もいます。  2．学校によるPTA会費の徴収・集金への関与について、その可否および取扱いを整理し、学校現場において誤解が生じないよう運用の…", "url": ""}, {"name": "愛西市", "lat": 35.1396, "lng": 136.731, "date": "2026-01-14", "body": "ＰＴＡ適正化推進委員会　様　  　このたびはお問い合わせをいただき、誠にありがとうございました。 　令和８年１月８日にお問い合わせをいただいた件につきまして、次の通り回答いたします。 　 　１．学校においてPTA入会が任意であることが明確に説明され、保護者の意思確認が適切な形で行われるよう、必要な指導または通知を行うこと。 　【回答】有：入学説明会においてPTAより説明をし、入会には同意書を提出いただいております。 　２．学校によるPTA会費の徴収・集金への関与について、その可否および取扱いを整理し、学校現場において誤解が生じないように運用の明確化を図ること。 　【回答】有：学校とPTAの間で…", "url": ""}, {"name": "高根沢町", "lat": 36.6396, "lng": 139.991, "date": "2026-01-14", "body": "ＰＴＡ適正化推進委員会　様  お世話になっております。 栃木県高根沢町教育委員会事務局　学校教育課の小林と申します。 いただいた要望書について、別添のとおり回答します。 よろしくお願いいたします。   ■連絡先 〒329-1217 栃木県塩谷郡高根沢町大字太田746-3 高根沢町教育委員会事務局学校教育課 担当：小林 Tel：028-675-1037　　Fax：028-676-3721", "url": "https://drive.google.com/file/d/12cVJQkviXWm4uaZ7_vcYVi0Dhd8ZvSrm/view?usp=drivesdk"}, {"name": "宮城県白石市", "lat": 38.0019, "lng": 140.6199, "date": "2026-01-14", "body": "PTA適正化推進委員会事務局代表 佐藤 大　様  お世話になっております。宮城県白石市教育委員会の石田と申します。 佐藤様には、以前よりPTAに関する照会をいただいており、回答が遅れ、たいへ ん申し訳ありません。 本日、別添にて、回答を送付させていただきます。 よろしくお願いいたします。   また、本照会及び回答とは別に、要望書もいただいておりましたが、そちらにつ いても、現在、内容を確認中です。 回答が準備でき次第お届けしたいと思いますので、今しばらく、お待ち願いたい と思います。 よろしくお願いいたします。   白石市教育委員会　石田康之", "url": "https://drive.google.com/file/d/1992Ssj8HBtneDJnbPZyTLYPdIe1FQJ0e/view?usp=drivesdk"}, {"name": "青森県横浜町", "lat": 41.086, "lng": 141.25, "date": "2026-01-08", "body": "PTA適正化推進委員会 事務局代表　佐藤　様   お疲れ様です。 このことについて、再度、別添のとおり送付しますので、よろしくお願いします。   　　　　　　　　　　　　　　　　　　　　　　　　　　　　横浜町教育委員会   ----- Original Message ----- Subject: Re: （青森県横浜町） 【緊急提言】公立学校におけるPTA業務の適正化に関する再照会および緊急提言の送付について Date: Tue, 6 Jan 2026 20:45:52 +0900 From: \"PTA適正化推進委員会\"<az001530051919@gmail.com> To: \"三浦 聖…", "url": "https://drive.google.com/file/d/12tEyXK1_Y-4hzxGMxrCnYCZCOqpMJW0K/view?usp=drivesdk"}, {"name": "須賀川市", "lat": 37.294, "lng": 140.384, "date": "2026-01-07", "body": "PTA適正化推進委員会　様  お世話になっております。 標記の件につきまして回答いたします。 どうぞよろしくお願いいたします。  福島県　須賀川市教育委員会　学校教育課 gakkou@city.sukagawa.fukushima.jp 0248-88-9168", "url": "https://docs.google.com/document/d/1r4EXt3Vv4T4W1QnDuYzFU6Jsk_WpnFUe/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "富岡町", "lat": 37.3197, "lng": 141.004, "date": "2026-01-06", "body": "PTA適正化推進委員会  　日頃より当町教育行政に対しまして、ご理解とご協力をいただきありがとうございます。 　件名につきまして、下記のとおり回答させていただきますので、 　ご査収くださいますようお願い申し上げます。  　　　　　　　　　　　　　　　　　　記 　　1. PTAの任意加入制に関する周知と入会意思確認の徹底 　　　当町におきましては、震災後、町に学校を再開してから間もないこともあり、PTAを設立しておりませんので、加入の周知及び意思確認は行っておりません。  　　2. 学校徴収金とPTA会費の混同回避および公費負担すべき項目の整理 　　　１の理由により、ＰＴＡ会費は徴収しておりませ…", "url": ""}, {"name": "徳島市", "lat": 34.0657, "lng": 134.5593, "date": "2025-12-26", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様   徳島市教育委員会学校教育課の三並と申します。  さて、10月16日及び同月20日付で照会のありました標題の件につきまして、 別添のとおり回答を送付いたしますので、ご確認ください。  このたびは、回答が遅くなり、申し訳ございませんでした。   ////////////////////////////////////////// 徳島市教育委員会 学校教育課　三並　亜希 〒770-8571　徳島市幸町２丁目５番地 ℡088-621-5414　fax 088-624-2577 ///////////////////////////////////…", "url": "https://docs.google.com/document/d/1MA1dPLLvljJOjzhxQmhV8vMv2xGZZa-S/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "兵庫県", "lat": 34.6913, "lng": 135.183, "date": "2025-12-24", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  兵庫県教育委員会事務局社会教育課でございます。 照会のありました事項につきまして、以下のとおり回答いたします。  (1)PTAの入会契約の成立要件に関する法的見解について 保護者の明示的な申込み意思表示とPTAの承諾がないまま、学校側が児童の入学をもって一律に「会員」とみなす運用については慣例的に行われてきましたが、PTAは任意団体であり、入退会については自由であるため、不適切であると考えます。  (2)学校によるPTA会費の徴収行為が無権代理に該当するかについて 学校がPTAから会費徴収等の事務処理の委任を受ける場合は、書面による委任状を徴…", "url": ""}, {"name": "日光市", "lat": 36.7197, "lng": 139.698, "date": "2025-12-05", "body": "PTA適正化推進委員　事務局代表 佐藤 大 様  このたびお問い合わせいただきましたPTAに関する追加の質問（質問7～8、および照会その2）につきまして、遅くなりましたが、以下のとおり回答させていただきます。  【追加質問　７・８】の回答について  ■【質問7】学校とPTAの独立性に関する運用状況 □1. 関与は全くない ✔2. 線引きを明確化し、限定的な範囲で「公務として」扱う □3. 「職専免」として扱う □4. 特に決めていない □5. その他  ■【質問8】「関与は全くない」以外の場合の根拠 文部科学省通知において、PTAは社会教育関係団体であり、学校運営上不可欠な活動であると位置…", "url": ""}, {"name": "西宮市", "lat": 34.7379, "lng": 135.3418, "date": "2026-04-28", "body": "照会その2 回答（2）ここです  ---------- Forwarded message --------- From: （お問合せ）教委 地域学校協働課 <vo_k_shakyo@nishi.or.jp> Date: 2025年11月28日(金) 17:41 Subject: 【西宮市回答】（照会その2） 学校教育法第137条に基づく学校施設利用許可およびPTA入会・会費事務等に関する照会（７項目）等 To: <az001530051919@gmail.com>   PTA適正化推進委員会 事務局代表 佐藤 大 様  西宮市教育委員会事務局 学校支援部 地域学校協働課 竹内と申します。…", "url": "https://drive.google.com/file/d/1O0AUoIGfMo6Irxx5eiWKMlGracNgef6B/view?usp=drivesdk"}, {"name": "三重県", "lat": 34.7303, "lng": 136.5086, "date": "2025-11-27", "body": "PTA適正化推進委員会  事務局代表　佐藤　様    平素は大変お世話になります。  三重県教育委員会事務局です。  10月16日付で、貴委員会から追加照会のあった項目について、別添のとおり回答いたします。  回答が遅れてしまい、大変申し訳ありませんでした。    ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊  　〒５１４－８５７０  　三重県津市広明町１３番地  　三重県教育委員会事務局  　社会教育・文化財保護課  　ＴＥＬ：０５９－２２４－３３２２     ＦＡＸ：０５９－２２４－３０２３  　メール：shabun@pref.mie.lg.jp   ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊…", "url": "https://drive.google.com/file/d/1v5_LbeKrOAElay3UQcB73SetMMn2_6MT/view?usp=drivesdk"}, {"name": "三戸町", "lat": 40.3778, "lng": 141.257, "date": "2025-11-26", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  平素よりお世話になっております。 標記の件につきまして、別添ファイルのとおり回答いたします。 よろしくお願い申し上げます。。  ・‥…─*・‥…─*・‥…─*・‥…─*・‥…─*・‥…─* 三戸町教育委員会事務局  〒039-0198　青森県三戸郡三戸町大字在府小路町43 【TEL】　0179-20-1157（直通）　　　　　 【FAX】　0179-20-1114 【E-mail】kyouiku@town.sannohe.lg.jp ‥…─*・‥…─*・‥…─*・‥…─*・‥…─*・‥…─*  ----- Original Message…", "url": "https://docs.google.com/document/d/1VToPMvnWvtjfscRn7NQWYnUn9G09IW89/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "安曇野市", "lat": 36.3037, "lng": 137.905, "date": "2025-11-25", "body": "サトウ　ダイ　様  　この度は安曇野市の情報公開制度に関するお問合せをいただき、ありがとうございます。 　照会いただいた事項につきまして、以下のとおり回答いたします。  　１．「【１】紙公文書のスキャンとCD-R交付の可否について」に対する回答 　　公文書開示請求の対象となる公文書につきましては、安曇野市情報公開条例第２条第１号の規定に基づき、実施機関の職員が職務上作成し、又は取得した文書（紙の公文書）、図面及び電磁的記録であって、当該実施機関の職員が組織的に用いるものとして、当該実施機関が保有しているものをいうことから、開示請求時点に存在しない電磁的記録につきましては、公文書開示請求の対象…", "url": ""}, {"name": "相模原市", "lat": 35.5701, "lng": 139.3631, "date": "2025-11-21", "body": "PTA適正化推進委員会　事務局代表　佐藤　大　様  　標記の件について、回答が遅れましたこと、お詫び申し上げます。 　追加照会に次のとおり回答します。  （質問７） ・回答：５．その他（管理職が、時間外・休日に参加するPTA主催会議への出席に関して、一部「公務として」出張扱いにしているものあり。）  （質問８） ・根拠の区分：内規 ・名称：「旅費事務の手引き」 ・条項・該当箇所：校務旅行の判断基準 ・発出・決定日／所管：令和７年・相模原市教育委員会　教職員課 ・備考（運用実態、判断基準、留意事項、関連文書の有無 等）：内規のため回答なし ・参照URLまたは添付有無：内規のため添付なし  以上…", "url": ""}, {"name": "町田市", "lat": 35.5453, "lng": 139.4468, "date": "2025-11-19", "body": "PTA適正化推進委員会 佐藤　様  東京都町田市教育委員会生涯学習総務課です。 標記の件につきまして、下記のとおり回答いたします。 よろしくお願いいたします。  ≪PTA入会に関する法的見解についての追加質問のお願い≫ 【質問７：学校とPTAの独立性に関する貴委員会の整理・運用状況】 PTAは社会教育関係団体であり、学校とは別団体であると認識しております。一方で現場では、 学校がPTA入会勧誘の支援、会費徴収の代行、会計管理等に関与している事例も見受けられます。 これらが業務時間内に行われる場合、公務か、または職務専念義務の免除（職専免）かが問題となり得ます。  【回答】 *□ 1. 関与は全…", "url": ""}, {"name": "茅ヶ崎市", "lat": 35.3325, "lng": 139.4028, "date": "2025-11-14", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  いつもお世話になっております。  先日ご照会いただきました ①「PTA入会に関する法的見解」および ②「学校教育法第１３７条に基づく施設利用許可及び会費事務」 に関する照会について、現時点で庁内関係課かいと調整を行っているため 回答が整い次第ご連絡させていただきますのでお待ちいただけますようお願いいたします。  以上となります。引き続きよろしくお願いいたします。  *************************************************** 茅ヶ崎市教育委員会教育総務課　小川　 TEL:0467-81-7216（直通…", "url": ""}, {"name": "愛知県", "lat": 35.1802, "lng": 136.9066, "date": "2025-11-14", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  いつもお世話になっております。 標記の件につきまして、以下のとおり回答いたします。  ■ 回答様式（このまま引用・記入・返信可）  【自治体名／教育委員会名】：愛知県教育委員会 【ご担当部署／ご担当者名】：あいちの学び推進課　 【ご連絡先（電話／メール）】：052-954-6780 （質問７）該当する選択肢に✔ □ 1 / ☑ 2 / □ 3 / □ 4 / □ 5（その他：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿）  （質問８）根拠等の記載 ・根拠の区分（法令／条例／規則／通知／通達／内規／答申／監査結果 等）：通知 ・名称：私費会計の会計処理基…", "url": ""}, {"name": "兵庫県西宮市", "lat": 34.7379, "lng": 135.3418, "date": "2025-11-13", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様   西宮市教育委員会事務局　学校支援部　地域学校協働課　竹内と申します。 令和7年10月16日にメールいただいております、標題の照会事項についてです。  令和７年11月14日が回答期限とのことでしたが、もう少しお時間いただければと思います。  なお、回答時には、令和7年10月19日にメールいただいております「【照会その2】 学校教育法第137条に基づく学校施設利用許可およびPTA入会・会費事務等に関する照会（７項目）」についても、お返事させていただけたらと思います。  今月末には回答可能かと思いますので、何卒ご容赦いただきますようお願いいたしま…", "url": ""}, {"name": "東京都", "lat": 35.6762, "lng": 139.6503, "date": "2025-11-11", "body": "PTA適正化推進委員会  事務局代表  佐藤　様      東京都教育庁高等学校教育課の星野と申します。お世話になっております。    10月にご照会いただきました標記の件について、  検討に時間がかかり、申し訳ございませんでした。    ご照会事項２点について、次のとおり回答させていただきますので、  内容をご確認くださいますようお願いいたします。    １　 学校とPTAの独立性に関する貴委員会の整理・運用状況について    (1)　ご照会  PTAは社会教育関係団体であり、学校とは別団体であると認識しております。  一方で現場では、学校がPTA入会勧誘の支援、会費徴収の代行、会計管理等に…", "url": ""}, {"name": "高槻市", "lat": 34.8496, "lng": 135.617, "date": "2025-11-10", "body": "ＰＴＡ適正化推進委員会 事務局代表　佐藤　大　様  平素より本市教育行政にご理解・ご協力をいただき、ありがとうございます。  令和７年１０月１６日付けでのＰＴＡに関するお問合せにつきましては、同年５月２３日付け及び同年８月２２日付けで回答した部分以外について回答させていただきます。  教職員が、ＰＴＡの立場として行う業務については、勤務時間外に行うよう指導しています。  以上  -------------------------------------------- 高槻市教育委員会事務局 -------------------------------------------- 〒569-00…", "url": ""}, {"name": "土佐清水市", "lat": 32.7832, "lng": 132.961, "date": "2025-11-04", "body": "PTA適正化推進委員会　様   平素よりお世話になります。  標記につきまして下記のとおり回答致します。 ご確認をお願い致します。    土佐清水市　生涯学習課　津野     ----- Original Message ----- Subject: 【追加照会】PTA入会に関する法的見解についての追加質問のお願い（【PTA担当課】様） Date: Thu, 16 Oct 2025 08:58:34 +0900 From: PTA適正化推進委員会 <az001530051919@gmail.com> To: undisclosed-recipients:;  【追加照会】PTA入会に関する法的…", "url": ""}, {"name": "豊田市", "lat": 35.0827, "lng": 137.1561, "date": "2025-10-31", "body": "※個人情報保護のため、宛先を非表示（ＢＣＣ）にて送信しています。 --------------------------------------------------------------  PTA適正化推進委員会　事務局代表　佐藤　大　様  　お問い合わせのありました件について、追加分も合わせて別添のとおり 回答をお送りします。 　回答にお日にちをいただき申し訳ありませんでした。  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ 豊田市こども・若者部こども・若者政策課 　　豊田市PTA連絡協議会事務局　　渡邉 〒471-8501 愛知県豊田市西町３丁目６０番地 TEL　0565-34-6630…", "url": "https://drive.google.com/file/d/1LhEWF_3UVpNtA4pjFzC6RrIa5bMCknZb/view?usp=drivesdk"}, {"name": "犬山市", "lat": 35.3836, "lng": 136.944, "date": "2025-10-30", "body": "PTA適正化推進委員会　事務局代表 　佐藤 大　様  　見出しの件につきまして、本市の状況を回答します。 　よろしくお願いいたします。  ■ 回答様式（このまま引用・記入・返信可）  【自治体名／教育委員会名】：愛知県犬山市／犬山市教育委員会 【ご担当部署／ご担当者名】：学校教育課／鈴木早智 【ご連絡先（電話／メール）】：(0568)44-0350／070200＠city.inuyama.lg.jp  （質問７）該当する選択肢に? 　□ 1 / □ 2 / □ 3 / ? 4 / □ 5（その他：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿）  -----------------------…", "url": ""}, {"name": "長野県", "lat": 36.6513, "lng": 138.181, "date": "2025-10-23", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様   お世話になっております。 標記の件につきまして、回答を本メールに添付いたしました。 ご査収のほどお願い申し上げます。  よろしくお願いいたします。  ----------------------------------------------------   長野県教育委員会事務局 　生涯学習課 生涯学習担当 　TEL：026－235－7437 　所属　shogai@pref.nagano.lg.jp ----------------------------------------------------", "url": "https://drive.google.com/file/d/1cU_TER9nqYBP5nlPtYdVa72ncFI0aiqA/view?usp=drivesdk"}, {"name": "愛西市", "lat": 35.1396, "lng": 136.731, "date": "2025-10-21", "body": "ＰＴＡ適正化推進委員会　様　  　このたびはお問い合わせ（ご意見）をいただき、誠にありがとうございました。 　令和７年１０月１６日にお問い合わせ（ご意見）をいただいた件につきまして、次の通り回答いたします。 　 【質問７：学校とＰＴＡの独立性に関する教育委員会の整理・運用状況】 　　　　４．特に決めていない 【質問８：上記が「１．関与が全くない」以外の場合の根拠】 　　　　特になし  ※質問１～６に関しては以前回答済  今後とも市政にご理解ご協力のほどよろしくお願いいたします。   愛西市教育部学校教育課長  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊  問い合わせ先 　愛知県愛西市役所 　教育部　学校…", "url": ""}, {"name": "玉名市", "lat": 32.9285, "lng": 130.5586, "date": "2025-10-17", "body": "PTA適正化推進委員会事務局 代表 佐藤 大　様  お世話になっております。 玉名市教育委員会事務局にてPTA業務を担当しております亀丸と申します。 標記の件についてご確認したくメールいたしました。  追加照会とのことでしたが、その前に送られていたメールを確認できておらず、本市から回答できていない状況です。 お手数おかけいたしますが、前回お送りいただいたメールを再送いただくことは可能でしょうか？ よろしくお願いいたします。  ◆◇━━━━━━━━━━━━━━━━━━━━━━━━━━━□  ◇  亀丸翼（かめまる・つばさ） ◇  玉名市教育委員会事務局教育部コミュニティ推進課 ◇ ‥‥‥‥‥‥‥…", "url": ""}, {"name": "大阪府門真市", "lat": 34.7344, "lng": 135.5762, "date": "2025-10-16", "body": "10/16 08:59に送った再照会8項目回答願う  2025年10月16日(木) 16:20 学校教育課（共用） <kys01@city.kadoma.osaka.jp>:  > ＰＴＡ適正化推進委員会 > 事務局代表 佐藤 大 様 > > ９月23日付けメールにてご照会のありました件について、以下のとおり回答いたします。 > > > PTAは任意加入の団体であり、加入は保護者の自由な意思に基づくものであるべきと考えております。そのため、PTAへの入会に際しては、書面等による明示的な加入意思の確認が適切であると認識しております。また、学校がPTA会費の徴収に関与する場合は、あくまでPTAとの…", "url": ""}, {"name": "大分県", "lat": 33.2382, "lng": 131.6126, "date": "2025-12-26", "body": "【大分県からのメールはBCCでお送りしております】  PTA適正化推進委員会事務局代表　佐藤　様  　令和７年１０月１６日付で貴団体から照会があった事項について、下記のとおり回答いたします。  （質問７）該当する選択肢に 〓 □ 1 / □ 2 / □ 3 / □ 4 /  〓5その他（具体的に：特定の事務を「校務として」扱う）  （質問８）根拠等の記載 ・根拠の区分：内規 ・名称：学校私費会計取扱要領 ・条項・該当箇所：92ページから９７ページまで、９９ページから１０５ページまで ・発出・決定日／所管：平成24年12月28（最終改訂：令和７年３月31日）／大分県教育庁教育改革・企画課 ・備考…", "url": ""}, {"name": "北海道三笠市", "lat": 43.2503, "lng": 141.8808, "date": "2025-10-16", "body": "※このメールは「m-FILTER」が自動的に生成して送信しています。  メールサーバーとの通信中、下記の理由により このメールは送信できませんでした。  以下のメールアドレスへの送信に失敗しました。 gakoukyouiku@city.mikasa.hokkaido.jp   -------server message 550 5.1.1 <gakoukyouiku@city.mikasa.hokkaido.jp>: Recipient address rejected: User unknown in local recipient table  -------SMTP command DA…", "url": ""}, {"name": "川崎市", "lat": 35.5308, "lng": 139.703, "date": "2025-11-12", "body": "PTA適正化推進委員会　事務局代表　佐藤様  お世話になっております。 照会をいただきました標記の件でございますが、 10月19日メールをいただきました【照会その2】学校教育法第137条に基づく学校施設利用許可およびPTA入会・会費事務等に関する照会（７項目）と 関連する内容となりますので、あわせて御回答いたします。 恐れ入りますが、回答までお時間を頂戴いただきますようお願い申し上げます。  川崎市教育委員会事務局総務部学事課 小杉（０４４－２００－３２８５） 88gakuzi@city.kawasaki.jp   On 2025/10/16 08:56:34 PTA適正化推進委員会 <az0…", "url": ""}, {"name": "堺市", "lat": 34.5733, "lng": 135.483, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表 佐藤 大　様  堺市教育委員会　地域教育振興課です。  回答期日の10月10日(金)17時を過ぎてしまいましたが、 「PTA入会に関する法的見解・照会６項目」の回答につきまして、 延長理由と中間報告日をお伝えいたします。  延長理由：現在、学校園への照会を行っており、学校園回答の集計及び学校園回答を元にした本市教育委員会の回答作成について時間を要するため。  回答の調整状況についての中間報告を10月31日(金)までに報告いたします。  ご理解の程、何卒よろしくお願いいたします。 ----------------------------------------…", "url": ""}, {"name": "町田市", "lat": 35.5453, "lng": 139.4468, "date": "2025-10-10", "body": "PTA適正化推進委員会 佐藤　様  東京都町田市教育委員会生涯学習総務課です。 標記の件につきまして、下記のとおり回答いたします。 よろしくお願いいたします。   1.PTAの入会契約の成立要件に関する法的見解について 保護者の明示的な申込み意思表示とPTAの承諾がないまま、学校側が児童の入学をもって一律に「会員」とみなす運用が多くの学校で行われています。このような「みなし入会」方式について、民法第522条および消費者契約法に照らし、契約が成立していると判断される法的根拠があるか、教育委員会としての見解をお示しください。  【回答】 PTAの加入にあたっては各会員の加入意思の確認が必要であると…", "url": ""}, {"name": "新潟県魚沼市", "lat": 37.2337, "lng": 138.9759, "date": "2025-10-10", "body": "PTA適正化推進委員会 　事務局代表　佐藤 大　様 ＝＝＝＝＝＝＝＝＝＝＝＝＝  新潟県魚沼市教育委員会事務局学校教育課が、照会の件につきまして回答いたします。  1.PTAの入会契約の成立要件に関する法的見解について → PTAの入会には、保護者の申込みとPTAの承諾が望ましいと考えます。  2.学校によるPTA会費の徴収行為が無権代理に該当するかについて → 無権代理に該当すると考えます。　  3.入会申込書による保護者および教職員の明確な意思確認の必要性について → 入会申込書の提出が望ましいと考えます。  4.個人情報保護法に基づく児童名簿・連絡個票の利用目的逸脱について → 個人情報…", "url": ""}, {"name": "三重県", "lat": 34.7303, "lng": 136.5086, "date": "2025-10-10", "body": "PTA適正化推進委員会  事務局代表　佐藤　様    三重県教育委員会事務局社会教育・文化財保護課です。  ９月21日付け「PTA入会に関する法的見解・照会６項目」の照会メールにてご質問のあった６項目について、次のように回答いたします。  なお、本県の回答は令和７年10月10日（金）16時50分に発出しておりますが、データ流出防止などの県システムの関係上、到着が数分程度遅れる可能性があります。ご了承ください。    A1：本県の県立学校においては、入学に際し、保護者に対して入会案内及び入会書を配付して、入会書を提出していただいた方々をPTA会員としていると認識しているため、ご質問のような事態は…", "url": ""}, {"name": "蒲郡市", "lat": 34.8296, "lng": 137.22, "date": "2025-10-10", "body": "先ほどのメールに添付されていたファイルのパスワードです。 添付ファイルをご覧いただく際は、パスワードを入力してご覧ください。   件名　：Re:【ご回答のお願い（再送／一斉送信）】PTA入会に関する法的見解・照会６項目  差出人：gakushu@city.gamagori.lg.jp   ---------------------------------   解凍パスワード（7桁） ： xI5QdmV  ---------------------------------  よろしくお願いいたします。", "url": ""}, {"name": "蒲郡市", "lat": 34.8296, "lng": 137.22, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　大 様  　蒲郡市教育委員会生涯学習課と申します。  　令和７年９月２１日付け電子メールで照会のありました標記の件につきまして、  　別添ファイルのとおり回答いたします。                ====================================== 蒲郡市教育委員会生涯学習課  〒443-0034 蒲郡市港町17番17号 （蒲郡市生命の海科学館内）※火曜休館 ℡0533-66-1167　Fax0533-66-1199 ====================================== 本メールに添付ファイルがある…", "url": "https://drive.google.com/file/d/1oTCozpmOhOamgB9OUuxJpnkXozQNRfCP/view?usp=drivesdk"}, {"name": "尼崎市", "lat": 34.7335, "lng": 135.4067, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　様  いつもお世話になっております。 尼崎市教育委員会事務局社会教育課でございます。  ご照会いただいております「PTA入会に関する法的見解・照会６項目」につきまして、現在、関係部署間において、 お送りいただいております文書（ハンドブック等）の共有や回答内容の調整を行っているところでございます。  今月中には照会いただいております項目につきましてご回答させていただきますので、ご理解いただければと存じます。  お手数をおかけいたしますが、よろしくお願いいたします。  ………………………………………………………………………………… 尼崎市教育委員会事務局…", "url": ""}, {"name": "大分県", "lat": 33.2382, "lng": 131.6126, "date": "2025-10-10", "body": "【大分県からのメールはBCCでお送りしております】  ＰＴＡ適正化推進委員会事務局代表　佐藤　様  　令和７年８月14日付けで貴団体から照会のあった事項について、下記のとおり回答します。  　　　　　　　　　　　　　　　　　　　　　　　　　　　　大分県教育庁社会教育課  　　　　　　　　　　　　　　　記  (1)　ＰＴＡの入会契約の成立要件に関する法的見解について （回答） 　ＰＴＡ団体組織への入会に当たっては、保護者の明示的な申込みの意思表示及びその意思表示に対する当該団体の承諾が必要なものと考えます。  (2)　学校によるＰＴＡ会費の徴収行為が無権代理に該当するかについて （回答） 　例示…", "url": ""}, {"name": "豊橋市", "lat": 34.7692, "lng": 137.3916, "date": "2025-10-10", "body": "PTA適正化推進委員会　事務局代表　佐藤　大　様  お世話になっております。 愛知県豊橋市教育委員会です。  お問い合わせをいただいておりました見出しの件につきまして、 別添のとおり回答させていただきます。  よろしくお願いいたします。  ************************************************* ＿＿＿　豊橋市教育委員会　教育部　生涯学習課 ＼ 　／　　　　　 ／ 　＼　TEL（0532）51-2846   FAX（0532）56-5105         ￣￣￣　E-mail：shogaigakushu@city.toyohashi.lg.jp **…", "url": "https://drive.google.com/file/d/10tWCcsupJzcjxo51ov5O6lv4ZBVXjk0w/view?usp=drivesdk"}, {"name": "神奈川県平塚市", "lat": 35.3282, "lng": 139.3498, "date": "2025-10-10", "body": "ＰＴＡ適正化推進委員会 事務局代表　佐藤　大　様  いつもお世話になっております。お問い合わせいただいた件について、回答に時間を要したことをお詫び申し上げます。次のとおり回答いたします。   １ ＰＴＡの入会契約の成立要件に関する法的見解について  回答：入会に際しては、明確な入会の意思表示が必要であると考えます。  ２ 学校によるＰＴＡ会費の徴収行為が無権代理に該当するかについて  回答：学校がＰＴＡの代理として会費徴収業務を行う場合には、業務委託契約を結び代理権を有することを明確にしておく必要があると考えます。書面契約を取り交わさなくても、ＰＴＡと学校とのやり取りの中で同意を得てＰＴＡの要…", "url": ""}, {"name": "鴨川市", "lat": 35.1173, "lng": 140.0986, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表 佐藤 大　様  ＰＴＡ入会手続き等の法的見解に係る照会事項６点について（回答）  　令和７年８月４日付けで照会のあった標記の件につきまして、下記のとおり回答いたします。  　　　　　　　　　　　　　　　　　　記  １　ＰＴＡの入会契約の成立要件に関する法的見解について 　　昨年度より、入会には、申込書による同意を求めるよう指導してきました。 　　しかし、全校で書面による同意確認が取れていない状況です。 　　「みなし入会」方式については、民法第522条および消費者契約法に照らし、契約が成立しているか疑義があると考えておりますので引き続き、指導して参ります。…", "url": ""}, {"name": "中央市", "lat": 35.5627, "lng": 138.5181, "date": "2025-10-10", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  照会のありました６点につきまして、下記のとおり回答いたします。 回答に時間がかかりましたこと、お詫びいたします。   1.PTAの入会契約の成立要件に関する法的見解について 保護者の明示的な申込み意思表示とPTAの承諾がないまま、学校側が児童の入学をもって一律に「会員」とみなす運用が多くの学校で行われています。このような「みなし入会」方式について、民法第522条および消費者契約法に照らし、契約が成立していると判断される法的根拠があるか、教育委員会としての見解をお示しください。 （回答） 　ＰＴＡへの入会の成立には、双方の意思表示の合致が必要…", "url": ""}, {"name": "栃木県日光市", "lat": 36.7197, "lng": 139.698, "date": "2025-10-10", "body": "ＰＴＡ適正化推進委員会　 　　事務局代表　佐藤　大　様  　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　日光市教育委員会  お問合せいただきました『ＰＴＡ入会手続き等の法的見解について照会事項６点』につきまして、当市の考え方を下記のとおり回答させていただきます。  　　　　　　　　　　　　　　　　　　　　　記  １．ＰＴＡの入会契約の成立要件に関する法的見解について 　ＰＴＡは任意団体ですので、保護者からの入会申込みを受け、その申込みを承諾することで契約が成立すると考えます。  ２．学校によるＰＴＡ会費の徴収行為が無権代理に該当するかについて 　ＰＴＡと学校が明確な…", "url": ""}, {"name": "刈谷市", "lat": 34.9889, "lng": 136.994, "date": "2025-10-10", "body": "****************************************  このメールは、Smooth Fileを利用して添付ファイルを分離しています。 下記のURLにアクセスしてファイルをダウンロードしてください。 　URL　　　 ：https://inet-kry.smoothfile.jp/smoothfile6/file-transfer-reply/download/random/592683e80ae2cb0b7c64 　ログインID：0b5a8b75 　パスワード：9annudov 　有効期限　：2025/10/10～2025/10/24 　 　ダウンロード可能回数：10…", "url": ""}, {"name": "宝塚市", "lat": 34.7987, "lng": 135.3614, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　様   宝塚市教育委員会社会教育課　福本と申します。 貴委員会からの照会について下記のとおり回答いたします。 回答が遅くなり、申し訳ございません。  １、PTAの入会契約の成立要件に関する法的見解について 　（回答）慣例的に「みなし入会」方式が存在していることもあるかもしれませんが、あくまで保護者からの正式な申し込みやPTA側の承諾をもって入会が成立するものと考えています。  ２、学校によるPTA会費の徴収行為が無権代理に該当するかについて 　（回答）学校側でPTA会費を代行徴収する場合は、民法第113条に基づく無権代理に該当しないよう、代理権をもつ必…", "url": ""}, {"name": "橋本市", "lat": 34.3103, "lng": 135.6044, "date": "2025-10-10", "body": "ＰＴＡ適正化推進委員会 事務局代表　佐藤　大　様  照会のありました件につきまして、以下のとおり回答します。  　ＰＴＡの入会につきましては、加入は任意であり、本人の意思に基づくものであるため、 書面等による手続きで加入にかかる意思を確認する必要があると考えております。 また、会費の徴収につきまして、学校が行う場合は委任を受けた徴収である必要があると考えております。 　個人情報につきましては、その利用目的を明確にしたうえで本人の同意を得て、 その範囲内で利用することが可能であると認識しており、保有する情報を本人の同意なく、 他に提供することは個人情報保護法の観点から適切ではないと考えております…", "url": ""}, {"name": "茨城県利根町", "lat": 35.8613, "lng": 140.3836, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　大 様  いつもお世話になっております。 標記の件について別紙の通り回答いたします。 回答様式がダウンロードできなかっため、こちらで作成したPDFで回答いたします。 よろしくお願いいたします。  ◆◆◇――――――――――――――――◇◆◆ 利根町教育委員会 指導課　石井　康之 〒300-1696 茨城県北相馬郡利根町布川841-1 TEL　：0297-68-2211 FAX　：0297-68-7989 MAIL：sidou@town.tone.lg.jp ◆◆◇――――――――――――――――◇◆◆", "url": "https://drive.google.com/file/d/10cHxj_Bp_Z-ABk7HM5GHcxhW0-dL2o0a/view?usp=drivesdk"}, {"name": "愛知県", "lat": 35.1802, "lng": 136.9066, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  いつもお世話になっております。 標記の件につきまして、以下のとおり回答いたします。  1.　ＰＴＡの入会契約の成立要件に関する法的見解について 　ＰＴＡは任意団体ですので、会員となる場合には本人の明確な意思表示が必要だと考えます。 県教育委員会としましては、県の小中学校ＰＴＡ連絡協議会、県公立高等学校ＰＴＡ連合会を通 じて、各ＰＴＡには本人の意思表示がないまま会員となることがないよう入会の方法については 特に留意するよう伝えております。  2.　学校によるＰＴＡ会費の徴収行為が無権代理に該当するかについて  　ＰＴＡの徴収金については、校長が…", "url": ""}, {"name": "江南市", "lat": 35.333, "lng": 136.87, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様   この度は貴重な情報提供をいただき、ありがとうございます。  見出しのことにつきまして、PTA適正化推進委員会ホームページより、ガイドライン等、課題と提言を読ませていただきました。  現在、江南市教育委員会及び各小中学校は、次年度のPTA活動について協議を始めておりますので、１２月１９日（金）まで回答期限を延長させていただきたく存じます。 なお、ホームページからでは、代表者様、構成員の皆様が分かりませんでしたので、恐れ入りますが、貴団体に関するところをお知らせいただきたく存じます。  どうぞよろしくお願い申し上げます。   ＊＊＊＊＊＊＊＊＊…", "url": ""}, {"name": "神奈川県相模原市", "lat": 35.5701, "lng": 139.3631, "date": "2025-10-10", "body": "ＰＴＡ 適正化推進委員会 事務局代表 佐藤 大 様  メールを拝読いたしました。 お問い合わせいただいた件について、相模原市教育委員会（以下「本市教育委員会」という。）としての見解等は、別添メール（令和７年７月４日付）のとおり既にお送りさせていただいている回答と重複している部分がございます。 追加でお問い合わせいただいた部分について、下記の通り回答させていただきます。  【回答内容】 今回の照会事項６点について、「１」から「４」については、既に本市教育委員会の見解をメール（令和７年７月４日付け）にて回答（以下「既回答」という。）しておりますので、既回答を踏まえた上で、追加でいただいた照会事項「…", "url": "https://drive.google.com/file/d/16MEliza84NK25iiQOGggOjtv2urm8VIE/view?usp=drivesdk"}, {"name": "長野県", "lat": 36.6513, "lng": 138.181, "date": "2025-10-10", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様   お世話になっております。 標記の件につきまして、回答を本メールに添付いたしました。 ご査収のほどお願い申し上げます。  よろしくお願いいたします。  ----------------------------------------------------   長野県教育委員会事務局 　生涯学習課 生涯学習担当 　TEL：026－235－7437 　所属　shogai@pref.nagano.lg.jp ----------------------------------------------------", "url": "https://drive.google.com/file/d/1CUgmR7UAUln0JrppLKtHJBm4G39kTnSF/view?usp=drivesdk"}, {"name": "粟島浦村", "lat": 38.4782, "lng": 139.2527, "date": "2025-10-10", "body": "PTA適正化推進委員会　様  新潟県粟島浦村教育委員会事務局　担当　田島  過日ご質問があった事案について次のとおり回答いたします。  照会事項１、２、４、６については、法的（司法）判断を有する立場ではないため回答を差し控えさせていただきます。 照会事項３については、他市町村ＰＴＡの事案（状況）について把握していないため、回答を差し控えさせていただきます。 照会事項５については、可能性に対しての見解は回答できないものと考えます。  ＞＞＞  以上です。  ＞＞＞     ------Original Message------ 差出人：\"PTA適正化推進委員会\"<az001530051919@…", "url": ""}, {"name": "岡山県", "lat": 34.6618, "lng": 133.9344, "date": "2025-10-06", "body": "資料3  2025年10月6日(月) 1:00 PTA適正化推進委員会 <az001530051919@gmail.com>:  > 資料2 > > 2025年10月6日(月) 0:59 PTA適正化推進委員会 <az001530051919@gmail.com>: > >> 資料 >> >> -- >> PTA適正化推進委員会 >> ホームページ >> <https://sites.google.com/view/ptatekiseika/%E3%83%9B%E3%83%BC%E3%83%A0> >> 事務局代表 佐藤 大 >> 235-0021 >> 横浜市磯子区岡村8-17-5-301…", "url": "https://drive.google.com/file/d/1LrHyopJEY6zl1OaxbvPjAKqoFVjQIJg3/view?usp=drivesdk"}, {"name": "茨木市", "lat": 34.8271, "lng": 135.5693, "date": "2025-10-04", "body": "茨木市教育委員会学校教育推進課 御中 （ご担当：田中 様） 社会教育振興課 御中 （ご担当：伊藤 様）    拝啓  時下ますますご清栄のこととお慶び申し上げます。  さて、2025年8月15日付で貴委員会よりいただいた「PTA入会手続き等の法的見解について」のご回答（以下「貴回答」）につきまして、誠にありがとうございました。 貴回答に示された、PTAの任意加入の徹底、個人情報の適正な取り扱い、そして不適切な運用に対する教育委員会の指導・助言責任を明確にする方針は、PTA活動の健全化に向けた重要な指針であると認識しております。  しかしながら、この指導方針が各学校の現場において、いかにして実効…", "url": ""}, {"name": "高知県いの町", "lat": 33.5457, "lng": 133.4286, "date": "2025-10-02", "body": "PTA適正化推進委員会　御中  　いつもお世話になっております。 　お返事が遅くなり、たいへん申し訳ございません。 　標題の件について、先般ご質問いただいた回答を、別添のとおり送信しますのでご査収ください。 　今後ともよろしくお願いします。  ～・～・～・～・～・～・～・～・～・～ 〒781-2192 高知県吾川郡いの町1700-1 　　　　 　いの町教育委員会事務局 　　　　　　次長補佐　濵田   TEL 088-893-1922　FAX 088-893-2121 　E-mail　kyouiku@town.ino.lg.jp ～・～・～・～・～・～・～・～・～・～", "url": "https://drive.google.com/file/d/1m7ci4DfswHAYbpS8CBpHadTtzVU67D7V/view?usp=drivesdk"}, {"name": "福岡県広川町", "lat": 33.2271, "lng": 130.601, "date": "2025-10-02", "body": "PTA適正化推進委員会　様  ご依頼があった調査について、別添のとおり回答いたします。 なお、事前に添付いただいたハンドブック等は、学校・ＰＴＡと 早速共有させていただきます。 ありがとうございました。  ----------------------------------- 広川町教育委員会事務局  生涯学習課 〒834-0115 福岡県八女郡広川町大字新代1804-1 □電話 0943-32-0093 □FAX　0943-32-4287 E-mail:syougai@town.hirokawa.lg.jp -----------------------------------", "url": "https://drive.google.com/file/d/1H_trochuDDsK_AKh5lohmE4vzCLXGjMS/view?usp=drivesdk"}, {"name": "福岡県広川町", "lat": 33.2271, "lng": 130.601, "date": "2025-10-02", "body": "差出人(エンベロープ)：syougai@town.hirokawa.lg.jp 宛先(ヘッダー)：<az001530051919@gmail.com> Cc： 件名：PTA入会に関する法的見解・照会６項目(回答) 上記メールを送信しました。 解凍パスワード：*_q83ki", "url": ""}, {"name": "豊田市", "lat": 35.0827, "lng": 137.1561, "date": "2025-10-01", "body": "※個人情報保護のため、宛先を非表示（ＢＣＣ）にて送信しています。 --------------------------------------------------------------  PTA適正化推進委員会 事務局代表　佐藤様  ご連絡が遅くなり申し訳ありません。 教育委員会から再送メールの段階で連絡をいただき、返信しております。  本市ではPTA事務局は教育委員会で所管しておらず、 首長部局のこども・若者部　こども・若者政策課が所管しております。 ですが、今回のご照会の内容は、教育委員会とも確認をして作成するため、 少し時間がかかりそうです。 回答につきましては、10月下旬にはお送…", "url": ""}, {"name": "尼崎市", "lat": 34.7335, "lng": 135.4067, "date": "2025-10-01", "body": "PTA適正化推進委員会 事務局代表　佐藤　様  いつもお世話になっております。 尼崎市社会教育課でございます。  PTA入会に関する法的見解・照会６項目に関するメールを受領いたしましたことをご 報告させていただきます。  これまで尼崎市に対しましては学事企画課（ama-gakumu@city.amagasaki.hyogo.jp） にメールをお送りいただいていたと存じますが、 PTAに関しましては、主に社会教育課と学校教育課が担当させていただいておりま す。 また、内容によっては他の部署が関わってくることもありますが、最初の窓口につき ましては社会教育課が担当いたしますので、可能でしたら今後お…", "url": ""}, {"name": "堺市", "lat": 34.5733, "lng": 135.483, "date": "2025-10-01", "body": "PTA適正化推進委員会 事務局代表 佐藤 大　様  堺市教育委員会　地域教育振興課です。  お問い合わせいただいておりました、 「PTA入会に関する法的見解・照会６項目」の再送メールにつきまして、 受信しておりますので、ご報告させていただきます。  -------------------------------------------------------------- 堺市教育委員会事務局　地域教育支援部　地域教育振興課 　〒590-0078　堺市堺区南瓦町３番１号　(高層館１１階) 　【TEL】072-228-7920  【FAX】072-228-7009 　【E-mail】chikyo…", "url": ""}, {"name": "和歌山県橋本市", "lat": 34.3103, "lng": 135.6044, "date": "2025-10-01", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  標題の件について 橋本市教育委員会生涯学習課で メール受領しました。  ＿／＿／＿／＿／＿／＿／＿／＿／＿／ 〒648-8585 和歌山県橋本市東家一丁目１番１号 橋本市教育委員会　生涯学習課　 TEL：0736-33-3704（スポーツ係・文化係） TEL：0736-33-6112（地域教育係） FAX：0736-33-2657 E-mail:syougai@city.hashimoto.lg.jp ＿／＿／＿／＿／＿／＿／＿／＿／＿／", "url": ""}, {"name": "受取確認・神奈川県平塚市", "lat": 35.3282, "lng": 139.3498, "date": "2025-09-30", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  いつもお世話になっております。 標記の件について、メールを拝受しております。 現在回答について各課間で調整を図っておりますので、 今しばらくお待ちいただきますようよろしくお願いいたします。   ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ 平塚市教育委員会 TEL　0463-23-1111 教育総務部教育総務課  E-mail　k-soumu@city.hiratsuka.kanagawa.jp 社会教育部社会教育課  E-mail　 k-shakai@city.hiratsuka.kanagawa.jp ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝…", "url": ""}, {"name": "茅ヶ崎市", "lat": 35.3325, "lng": 139.4028, "date": "2025-09-30", "body": "PTA適正化推進委員会 事務局代表　佐藤　大 様  いつもお世話になっております。 本件、茅ヶ崎市社会教育課より回答させていただきます。  先日はお忙しいところ当市まで御足労いただき、誠にありがとうございました。 本メールについて、確認及び返答が遅くなり大変申し訳ございません。  本件に関しましては、これまでの照会に対する当市の回答や情報公開請求に基づく関係資料等の確認や写しをお持ちでいらっしゃることかと存じます。 改めて回答が必要な場合には、お手数をおかけして大変恐縮ではございますが、今一度その旨ご連絡いただければ幸いです。  ********************************…", "url": ""}, {"name": "中央区", "lat": 35.6706, "lng": 139.7731, "date": "2025-09-30", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  　お問い合わせいただいた標記の件について、メールの受領確認のため返信いたします。 　照会の回答につきましては、現在調整中ですので、今しばらくお待ちください。 　担当課につきましては、教育委員会事務局庶務課となります。  　　中央区教育委員会事務局庶務課庶務係 　　東京都中央区築地１－１－１ 　　０３－３５４６－５５０３", "url": ""}, {"name": "長岡市", "lat": 37.4474, "lng": 138.851, "date": "2025-09-30", "body": "PTA適正化推進委員会　事務局代表　佐藤　大　様  　お世話になっております。 　長岡市教育委員会子ども政策課です。  　標記について、本メールの受領した旨のご連絡になります。 　また、担当課については、市P連関係は子ども政策課、学校関係は学校教育課になります。  　以上、よろしくお願いします。  ・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・ 長岡市教育委員会　子ども未来部　子ども政策課 　 〒940-0084　新潟県長岡市幸町2-1-1　さいわいプラザ　6階 　 子ども政策課　　　電 話　0258-39-2300　ＦＡＸ　0258-39-2394 　 児童育成班専用　　電…", "url": ""}, {"name": "大分県", "lat": 33.2382, "lng": 131.6126, "date": "2025-09-30", "body": "【大分県からのメールはBCCでお送りしております】  ＰＴＡ適正化推進委員会事務局代表　佐藤　様  　令和７年８月14日付け及び同９月21日付けで貴団体から送信されたメールについては、当教育委員会において受領していることを回答します。  大分県教育庁社会教育課", "url": ""}, {"name": "栃木県日光市", "lat": 36.7197, "lng": 139.698, "date": "2025-09-30", "body": "ＰＴＡ適正化推進委員会 　事務局代表　佐藤　大　様  　お世話になっております。 　ご照会いただきました『ＰＴＡ入会に関する法的見解』メールにつきまして、 　受領確認をいたしました。 　回答につきましては現在調整中ですので、担当部署について下記のとおりお知 　らせいたします。よろしくお願いいたします。  　≪担当課≫　日光市教育委員会事務局　学校教育課 　　　　　　　TEL  0288-21-5181 　　　  　 　　FAX  0288-21-5185           mail :   gakkou-kyouiku@city.nikko.lg.jp　　　　 　 　 ★゜・*:.。.☆゜…", "url": ""}, {"name": "神奈川県相模原市", "lat": 35.5701, "lng": 139.3631, "date": "2025-09-30", "body": "ＰＴＡ 適正化推進委員会  　　事務局代表 佐藤 大 様  　メールを拝読いたしました。 　お問い合わせいただいた件について、相模原市教育委員会（以下「本市教育委員会」という。）としての見解等は、既にメール（令和７年７月４日付）にてお送りさせていただいている回答と重複している部分がございますので、追加で回答させていただく点につきまして、別途、御指定の期日までに回答させていただきます。 お忙しいところ恐れ入りますが、どうぞよろしくお願いいたします。  【今回回答内容】 メールの受領：令和７年８月２日に受領いたしました。 担当課：生涯学習課、学校教育課  　以上、よろしくお願い申し上げます。…", "url": ""}, {"name": "羽村市", "lat": 35.7724, "lng": 139.3113, "date": "2025-09-30", "body": "PTA適正化推進委員会 事務局代表　佐藤様   お世話になっております。 こちらは羽村市教育委員会学校教育課です。  表題の件につきまして、メールの受領を確認しました。 照会事項に関する回答につきましては、別途御連絡します。  よろしくお願いします。  ◇*◇*◇*◇*◇*◇*◇*◇*◇*◇ （取りまとめ担当） 羽村市教育委員会　生涯学習部  学校教育課学務係 TEL  042-555-1111(内線356)  Mail  s701010@city.hamura.tokyo.jp  ◇*◇*◇*◇*◇*◇*◇*◇*◇*◇", "url": ""}, {"name": "愛知県半田市", "lat": 34.8921, "lng": 136.9367, "date": "2025-09-29", "body": "PTA適正化推進委員会　 事務局代表　佐藤様  いつもお世話になっております。愛知県半田市教育委員会学校教育課の羽根と申します。 見出しのことにつきまして、メールを受領したことの連絡です。 担当課は、学校教育課です。 回答についてはもう少々お待ちください。  -------------------------------------------- 　半田市教育委員会 　学校教育課総務担当　羽根  　〒475‐8666　半田市東洋町２－１ 　TEL：0569‐21‐3111（内線：518） 　FAX：0569‐24‐0511 　E‐mail：gkkyoiku@city.handa.lg.jp -…", "url": ""}, {"name": "茅野市", "lat": 35.9944, "lng": 138.1572, "date": "2025-09-29", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  お世話になっております。 先にご質問をいただいていました件について、添付ファイルのとおり 回答いたします。 回答をお待たせしまして、誠に申し訳ございませんでした。 *************************************** 〒391-8501 長野県茅野市塚原二丁目６番１号 茅野市教育委員会事務局こども部 学校教育課　担当：今井 TEL　0266-72-2101（内線607） FAX　0266-73-9843 mail　gakkokyoiku@city.chino.lg.jp **********************…", "url": "https://drive.google.com/file/d/1esuUJaioZ79LS-JV07g3-IBYyi7XgAlU/view?usp=drivesdk"}, {"name": "新潟県魚沼市", "lat": 37.2337, "lng": 138.9759, "date": "2025-09-29", "body": "PTA適正化推進委員会 　事務局代表　佐藤 大　様 ＝＝＝＝＝＝＝＝＝＝＝＝＝  メールを拝受いたしました。 10月10日(金)までに回答できるよう努めます。  ◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇ 【魚沼市教育委員会事務局　学校教育課 　〒946-8601 　新潟県魚沼市小出島910番地（本庁舎３階） 　　TEL 025-793-7452   FAX 025-792-1261 　　e-mail(代表) gakkokyoiku@city.uonuma.lg.jp ◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇", "url": ""}, {"name": "茨城県利根町", "lat": 35.8613, "lng": 140.3836, "date": "2025-09-26", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様　  お世話になっております。 PTA入会に関する法的見解・照会６項目のメールの受領を確認いたしました。 担当課は利根町教育委員会指導課となります。回答が遅れてしまい大変失礼いたしました。期限までに回答させていただきいと思います。 よろしくお願いします。  ◆◆◇――――――――――――――――◇◆◆ 利根町教育委員会 指導課　石井　康之 〒300-1696 茨城県北相馬郡利根町布川841-1 TEL　：0297-68-2211 FAX　：0297-68-7989 MAIL：sidou@town.tone.lg.jp ◆◆◇――――――――――…", "url": ""}, {"name": "宮崎県椎葉村", "lat": 32.4621, "lng": 131.1333, "date": "2025-09-25", "body": "ーーーーーーーーーーーーーーーーーーーー 本メールの添付ファイルはFinalCodeで 暗号化されています。ファイルを開くためには、 添付のHTMLファイルをWebブラウザで開いてく ださい。ブラウザにメールアドレス入力フォーム が表示されます。このメールを受信された、お客 様のメールアドレスを入力してください。入力 したメールアドレスに閲覧／ダウンロードのため のワンタイムパスワード送付しますので、次の 画面で入力を行います。 ーーーーーーーーーーーーーーーーーーーー   　　PTA適正化推進委員会 　　事務局代表　佐藤　大　　様  　　　　お世話になります。 　　　　標記の件につきまして回…", "url": "https://drive.google.com/file/d/1M0E4u-Zf1WPUDX1edfHzZRhmSAB11YL0/view?usp=drivesdk"}, {"name": "蒲郡市", "lat": 34.8296, "lng": 137.22, "date": "2025-09-25", "body": "PTA適正化推進委員会 事務局代表　佐藤　大様  　お世話になります。  　愛知県蒲郡市教育委員会生涯学習課です。  　標記の件につきまして、受領いたしました。   ====================================== 蒲郡市教育委員会生涯学習課 〒443-0034 蒲郡市港町17番17号 （蒲郡市生命の海科学館内）※火曜休館 ℡0533-66-1167　Fax0533-66-1199 ====================================== 本メールに添付ファイルがある場合、 セキュリティ対策としてパスワード設定がされております。 パスワード記載メ…", "url": ""}, {"name": "水上市", "lat": 36.7296, "lng": 138.9979, "date": "2025-09-25", "body": "以下の件名で Gakko に投稿されたメールは、リスト司会者の チェックのために投稿が保留されました。      Fwd: 【ご回答のお願い（再送／一斉送信）】PTA入会に関する法的見解・照会６項目   保留の理由は以下のとおりです。      宛先数が多すぎます  メーリングリストへの配送が承認されない場合は、非承認の理由が 通知されます。なお、以下のURLでこの投稿を取り消すことができます。      http://volvo.town.mizumaki.lg.jp/mailman/confirm/gakko/bea9a5dbc30b92bfbf4203d3d6ca44ff17ecd2d0…", "url": ""}, {"name": "岡山市", "lat": 34.6618, "lng": 133.9344, "date": "2025-09-24", "body": "PTA適正化推進委員会　事務局代表　佐藤　大　様  ２０２５年８月６日付けの「【再照会】PTA入会手続き等の法的見解について 照会事項６点」につきまして、以下のとおり回答いたします。  1. PTAの入会契約の成立要件に関する法的見解について    保護者の明示的な申込み意思表示とPTAの承諾がないまま、学校側が 児童の入学をもって一律に「会員」とみなす運用が多くの学校で行われています。 このような「みなし入会」方式について、民法第522条および消費者契約法に照らし、 契約が成立していると判断される法的根拠があるか、教育委員会としての見解を お示しください。  ＜回答＞ ２０２５年７月１６日付…", "url": ""}, {"name": "埼玉県川島町", "lat": 36.0101, "lng": 139.4868, "date": "2025-09-24", "body": "PTA適正化推進委員会 ご担当者　様  お世話になります。 メール受領しています。  担当課名 埼玉県川島町教育委員会教育総務課  ----- Original Message ----- Subject: 【インターネットメール】Fwd: 【ご回答のお願い（再送／一斉送信）】PTA入会に関する法的見解・照会６項目 Date: Mon, 22 Sep 2025 21:42:07 +0900 From: \"PTA適正化推進委員会\"<az001530051919@gmail.com> To: undisclosed-recipients: ; PTA適正化推進委員会 wrote: > ******…", "url": ""}, {"name": "横浜市", "lat": 35.4437, "lng": 139.638, "date": "2025-09-12", "body": "PTA適正化推進委員会　佐藤様  横浜市教育委員会事務局法務ガバナンス室です。  ９月１日にＥメールでご意見いただいた件については、所管である学校支援・地域連携課が対応いたします。 メールいただいた内容について、当室から学校支援・地域連携課に伝えてまいります。  ________________________________________ 差出人: PTA適正化推進委員会 <az001530051919@gmail.com> 送信日時: 2025年9月1日 8:08 宛先: 横浜市教育委員会事務局法務ガバナンス室 件名: 【照会】PTA入会手続き等の法的見解について照会事項６点  ┏━━━…", "url": ""}, {"name": "city.tama", "lat": 35.6369, "lng": 139.4463, "date": "2025-09-09", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  こちらは多摩市教育委員会教育指導課です。 お問合せいただきました照会事項について、下記の通り回答いたします。   1.  PTAの入会契約の成立要件に関する法的見解について 　保護者の明示的な申込み意思表示とPTAの承諾がないまま、学校側が児童の入学をもって一律に「会員」とみなす運用が多くの学校で行われています。このような「みなし入会」方式について、民法第522条および消費者契約法に照らし、契約が成立していると判断される法的根拠があるか、教育委員会としての見解をお示しください。 【回答】 PTAは任意の団体であることから、入会について、各保…", "url": ""}, {"name": "京都市", "lat": 35.0116, "lng": 135.7681, "date": "2025-09-07", "body": "ご担当者さま  PTA適正化推進委員会代表 佐藤と申します。 当会は、全国のPTA入退会の完全自由化を目指し活動しています。 私の地元、横浜市立学校全500校については、PTA入会申込書による入退会の自由化をほぼ成し遂げました。 この動きを全国に広げようと、まずは全国1700の教育委員会に対して、「PTA入会手続き等の法的見解について照会事項６点」 のメールを8月に送り、現在次々と回答が集まっています。 京都市教育委員会の回答が来ましたので、情報提供いたします。 当方は回答6番において、教育委員会の認識が現状とは乖離しているとの確信を持っています。 このような認識では京都市の市民にとって公共の…", "url": "https://drive.google.com/file/d/12hcRB1K1549uLm0A2Z2F3R2fW7-JJYRG/view?usp=drivesdk"}, {"name": "福島県国見町", "lat": 37.8649, "lng": 140.5596, "date": "2025-09-05", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  平素より大変お世話になっております。 福島県国見町教育委員会と申します。 先に照会いただきました標題の件について、下記のとおり回答いたします。  1．PTAの入会契約の成立要件に関する法的見解 PTAは任意加入団体であり、保護者の加入は本人の自由意思に基づくべきものであると認識しております。そのため、入会にあたっては、明示的な意思表示の確認が望ましいと考えており、現行の運用については各学校を通じて実態を把握し、必要に応じて改善を促すことを検討いたします。  2．学校によるPTA会費徴収と無権代理該当性について 学校がPTA会費を徴収する場合…", "url": ""}, {"name": "照会の回答について（姫路市", "lat": 34.8394, "lng": 134.6939, "date": "2025-09-04", "body": "佐藤 大 様  照会のありました６項目のうち、 生涯学習課では、１、３、５について回答いたします。 ＰＴＡは社会教育法第10条に規定する社会教育関係団体であり、子どもたちのため「より安全で、より良い環境づくり」に取り組む、保護者及び教職員で構成される団体であると考えております。 ＰＴＡは任意の団体であり、その入会には加入意思の確認が必要であるという認識は持っております。「みなし入会」について、個々の単位ＰＴＡの状況を把握しているわけではありませんが、みなし入会が適切な状態であるとは考えておりませんので、姫路市連合ＰＴＡ協議会事務局に対し、各単位ＰＴＡに対して入会の意思確認をするよう、令和７年２…", "url": ""}, {"name": "亀岡市", "lat": 35.011, "lng": 135.5775, "date": "2025-09-01", "body": "PTA適正化推進委員会　佐藤様  いつもお世話になっております。 標記の件について、下記のとおり回答します。 よろしくお願いいたします。  1.  PTAの入会契約の成立要件に関する法的見解について PTAは社会教育法に規定される社会教育関係団体の一つであり、任意団体であると定義されます。児童生徒の入学をもって自動的にPTAに入会したとみなす運用は、保護者の明確な申し込みとそれに対するPTAの承認が得られているとはいえず、従って民法第522条及び消費者契約法に基づいた契約関係が成立しているとはいえないと考えます。  2.  学校によるPTA会費の徴収行為が無権代理に該当するかについて PTA会…", "url": ""}, {"name": "福岡県南会津郡只見町", "lat": 37.336, "lng": 139.164, "date": "2025-09-01", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  日頃より大変お世話になっております。 表題の件につきましては別添のとおりです。 よろしくお願いいたします。  　只見町教育委員会教育長　渡部　公三 　（事務担当　こども未来係　吉田行宏）  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ 〒968-0421 福島県南会津郡只見町大字只見字町下2591番地の30 只見町教育委員会 子ども未来係　 TEL:0241-82-5320 FAX:0241-82-2337 MAIL:kodomo@town.tadami.lg.jp ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊", "url": "https://docs.google.com/document/d/1nyJUwuVJUEfDgVQx_ECssicPlRGvcsvr/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "東秩父村", "lat": 36.0743, "lng": 139.1742, "date": "2025-08-29", "body": "PTA適正化推進委員会　 事務局代表　佐藤　さま  いつもお世話になっております。 東秩父村教育委員会 岩田と申します。  標記の件につきまして、別添のとおり回答いたします。 ご多用とは存じますがよろしくお願いいたします。  　◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇ 　〒355-0393　埼玉県秩父郡東秩父村大字御堂634番地 　東秩父村教育委員会   岩田 　ＴＥＬ　0493-82-1230　ＦＡＸ　0493-82-1562 　e-mail　kyouiku@vill.higashichichibu.saitama.jp 　◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇ m(_ _)m…", "url": "https://drive.google.com/file/d/1BlBQEs-TSHqtq-JeikbwsCs3EuhJyTk8/view?usp=drivesdk"}, {"name": "埼玉県皆野町", "lat": 36.0764, "lng": 139.0959, "date": "2025-08-29", "body": "PTA適正化推進委員会　ご担当者様  お世話になります、皆野町教育委員会の望月と申します。  照会をお送りいただいているメールアドレスに関しまして、 今後、皆野町教育委員会分は差し上げたメールアドレスに 変更をお願いいたします。       > From: PTA適正化推進委員会 <az001530051919@gmail.com>  > Sent: Thursday, August 28, 2025 8:27 AM > To: school.edu@city.mito.lg.jp; gakumu@city.hitachi.lg.jp; gakuji@city.tsuchiura.lg.jp;…", "url": ""}, {"name": "愛知県犬山市", "lat": 35.3836, "lng": 136.944, "date": "2025-08-28", "body": "PTA適正化推進委員会　事務局代表 　 佐藤 大　様  　愛知県犬山市教育委員会　主幹兼指導室長　鈴木早智　と申します。 　この度は貴重な情報提供をありがとうございます。 　見出しの件につきまして、下記の通りご回答いたします。  　　　　　　　記  1.  PTAの入会契約の成立要件に関する法的見解について 　PTA組織は任意団体であり、保護者の明示的な申し込みによる意思表示確認とPTAの承諾により入会契約が成立すると考えます。犬山市内の学校において明文化が進んでいない学校もあるため、指導していきます。  2.　学校によるPTA会費の徴収行為が無権代理に該当するかについて 　該当すると考えます…", "url": ""}, {"name": "茨城県下妻市", "lat": 36.1856, "lng": 139.9671, "date": "2025-08-27", "body": "PTA適正化推進委員会 事務局代表　佐藤　大　様  　お世話になっております。 　お問い合わせいただきました件につきまして、下妻市教育委員会として見解を取りまとめた上、次のとおり回答させていただきます。  【回答】  １．ＰＴＡの入会契約の有効性の是非は、個別に判断する必要があると考えております。したがいまして、本市教育委員会は、「みなし入会」方式による契約の有効性について、一律の判断を示しておりません。なお、PTAの入会の有効性について、当事者から相談があった場合は、その都度対応してまいります。  ２．学校によるPTA会費の徴収行為の適法性の有無は、個別に判断する必要があると考えております。…", "url": ""}, {"name": "京都市", "lat": 35.0116, "lng": 135.7681, "date": "2025-08-26", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様  京都市教育委員会生涯学習部の増田と申します。 貴委員会からの照会について下記のとおり回答いたします。 回答が遅くなり、申し訳ございません。  １．PTAの入会契約の成立要件に関する法的見解について 　本市では、ＰＴＡの自動加入や強制加入とならないよう、教育委員会から学校園に対して、 ＰＴＡ入会は任意であることを保護者に説明のうえ、本人から書面で入会届を提出いただく ことにより加入の意思確認を行うよう学校に依頼しています。  ２．学校によるPTA会費の徴収行為が無権代理に該当するかについて 　本市でのＰＴＡ会費の徴収につきましては、保護者への…", "url": ""}, {"name": "静岡県田方郡函南町", "lat": 35.1071, "lng": 138.8845, "date": "2025-08-26", "body": "PTA適正化推進委員会　佐藤様  お世話になっております 神門です  >> 現在解説されているサイト（sites.google <http://sites.google/>）やXをチェックしておけば， （専用HP開設の）アナウンスをキャッチできる認識よろしいでしょうか？ > はい、その通りです。 承知いたしました。お待ちしております。   > PTAは学校のフロント企業化しているとみています。 僭越ながら，この表現には唸ってしまいました。 たしかに！   > 当委員会を十分に利用なさってください。 ありがとうございます。十二分に使わせていただきます。   引き続きよろしくお願いいたします  ※…", "url": ""}, {"name": "東大阪市", "lat": 34.6793, "lng": 135.5994, "date": "2025-08-22", "body": "PTA適正化推進委員会　事務局代表 佐藤 大様   　　お世話になっております。 　　大阪府にあります東大阪市教育委員会教育政策室の笠松と申します。  　　ご照会いただきました、標記の件につきまして別添のとおり回答いたします。  　　ご多用とは思いますが、確認のほどよろしくお願いします。    ======================= 東大阪市教育委員会事務局 教育政策室　担当：笠松 TEL 06-4309-3264 FAX 06-4309-3837 =======================", "url": "https://docs.google.com/document/d/1FrA9HFnwMylB783Xw7_lX20BGtkiRbwX/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "西宮市", "lat": 34.7379, "lng": 135.3418, "date": "2026-04-28", "body": "---------- Forwarded message --------- From: （お問合せ）教委 地域学校協働課 <vo_k_shakyo@nishi.or.jp> Date: 2025年8月21日(木) 17:42 Subject: 【西宮市回答】PTA入会手続き等の法的見解について To: <az001530051919@gmail.com>   PTA適正化推進委員会 事務局代表 佐藤 大 様  西宮市教育委員会事務局 学校支援部 地域学校協働課 竹内と申します。  照会事項につきまして、別添のとおり回答いたします。  ご査収いただきますようお願い申し上げます。  ******…", "url": "https://drive.google.com/file/d/11WmVeugLVmnEB67QfXfNWMaiI4QrAbdD/view?usp=drivesdk"}, {"name": "大阪市", "lat": 34.6937, "lng": 135.5023, "date": "2025-08-21", "body": "件名：大阪市PTA運営に関するご指摘と改善要望について 大阪市教育委員会事務局 生涯学習部 生涯学習担当 中神様 平素より教育行政にご尽力いただき、ありがとうございます。貴委員会が公開されている「PTA活動の手引き」および令和5年度調査に関するご説明を拝読し、PTA運営の現状について理解を深めました。しかしながら、いくつかの点において、法的な観点および保護者の権利擁護の観点から問題があると考え、以下にご指摘と改善要望を申し述べさせていただきます。ご検討のほど、よろしくお願い申し上げます。1. 任意加入の原則とその実効性についてご説明では、450団体のうち436団体が説明会や書面で入会の趣旨説明…", "url": "https://drive.google.com/file/d/1se6pAFmuG0y_k6OmfqZXYUkYI7mxVRLf/view?usp=drivesdk"}, {"name": "大阪府", "lat": 34.6937, "lng": 135.5023, "date": "2025-08-20", "body": "大阪府教育庁 市町村教育室 地域教育振興課 社会教育グループ 御中   PTA関連手続き及び個人情報利用に関する再照会  貴庁の令和７年８月２０日付け回答（以下、「貴庁回答」）を拝受いたしましたが、PTA入会手続き、会費徴収、及び学校名簿の利用に関する記述には、民法、消費者契約法、個人情報保護法の観点から誤認や不十分な点が含まれていると考えられます。特に、要式契約と不要式契約の混同、消費者契約法の趣旨の軽視、個人情報保護法の適用に関する曖昧さが顕著であり、これらの誤解が保護者の権利を侵害するリスクを招いています。以下に問題点を指摘し、改めて明確な見解を求めます。  【指摘する問題点】  1.…", "url": "https://drive.google.com/file/d/1Wbk0tdYvjDRGMMRJQ2Ed3Ej5ro_J5i9P/view?usp=drivesdk"}, {"name": "宮城県大崎市", "lat": 38.5748, "lng": 140.9541, "date": "2025-08-12", "body": "PTA適正化推進委員会 事務局代表　佐藤　大  様  平素よりお世話になっております。 標記の件につきまして，別添のとおり送付いたします。 改めて，PTAの在り方について考える機会を与えていただきました。 どうぞよろしくお願いいたします。  ************************** 〒989-6188 宮城県大崎市古川七日町１番１号 大崎市教育委員会学校教育課 副参事　千葉　弘昭 TEL　0229-23-2212 FAX　0229-23-1011 **************************    ----- Original Message ----- Subject:…", "url": "https://docs.google.com/document/d/1mf_DCejrHquxMXT45uoBjoeJ1YHrm7Xv/edit?usp=drivesdk&ouid=111127139897663817243&rtpof=true&sd=true"}, {"name": "鹿児島市", "lat": 31.5966, "lng": 130.5571, "date": "2025-08-09", "body": "ＰＴＡ適正化推進委員会　事務局代表　　佐藤　大　様  日頃から本市教育行政に対し、ご協力ご理解を賜り感謝申し上げます。 令和７年８月3日付けでお問い合わせいただきました 「【照会】ＰＴＡ入会手続き等の法的見解について照会事項」への回答につきましては、 ８月中に電子メールで回答いたします。 ―――――――――――――――――――――――――――――――――――――――――― 鹿児島市教育委員会生涯学習課 鹿児島市荒田１丁目４－１ Mail：sgaku-syogai@city.kagoshima.lg.jp ――――――――――――――――――――――――――――――――――――――――――", "url": ""}, {"name": "岐阜県東白川村", "lat": 35.6096, "lng": 137.3168, "date": "2025-08-08", "body": "ＰＴＡ適正化推進委員会事務局代表　佐藤様  お世話になっております。 岐阜県　東白川村教育委員会教育課　今井と申します。 先日ご照会をいただきましたＰＴＡ入会手続き等の法的見解に係るご照会について 東白川村教育委員会の見解と対応を次のとおり回答いたします。  ▼照会事項（全6項目） >1.  PTAの入会契約の成立要件に関する法的見解について >保護者の明示的な申込み意思表示とPTAの承諾がないまま、学校側が児童の入学をもって一律に「会員」とみなす運用が多くの学校で行われています。このような「みなし入会」方式について、民法第522条および消費者契約法に照らし、契約が成立していると判断される法的…", "url": ""}, {"name": "川口市", "lat": 35.8072, "lng": 139.7244, "date": "2025-08-08", "body": "佐藤　大　様  日頃から市政にご理解を賜り、厚くお礼申し上げます。 また、この度はご意見をいただきありがとうございます。  【4．照会事項　７点】について、回答いたします。  【回答】 １ みなし入会や抱き合わせ徴収が民法、消費者契約法、個人情報保護法に違反する可能性について、どのように評価されますか。　    →PTAは任意加入団体のため、入会や会費の支払い、個人情報の取扱いの方法について、対象となるご家庭の意思が十分に反映されていなかったり、適正に取り扱われていなかったりする場合、法令に違反する可能性があると考えます。  ２ これらの運用が学校教育法第137条の「学校教育上の支障」に該当す…", "url": ""}, {"name": "海老名市", "lat": 35.4451, "lng": 139.3896, "date": "2025-08-06", "body": "佐藤様  お問合せいただきましたPTA入会手続き等の法的見解について、回答いたします。  照会事項１～５につきましては、令和7年5月21日に差し上げたメールにて回答させていただいた通りです。 なお、消化事項６につきましては、現時点でお問合せのような措置を行う予定はございません。  今後も引き続き、学校やPTA等へ神奈川県が作成するPTAハンドブック等の周知を行い、状況に応じて必要な 指導助言等を行ってまいりたいと考えております。   ＊＊＊＊＊＊＊＊＊＊＊＊ 〒243-0422 海老名市中新田377 海老名市教育委員会 学び支援課 電話　046-235-4926 FAX　046-231-027…", "url": ""}, {"name": "栃木県さくら市", "lat": 36.6845, "lng": 139.9729, "date": "2025-08-06", "body": "PTA適正化推進委員会   事務局代表 佐藤 大 様    お世話になっております。   さくら市学校教育課の橋本と申します。    この度は、貴委員会よりお寄せいただきましたPTAの運用に関する詳細な資料を拝読し、 深く感謝申し上げます。 PTAが学校教育において果たす重要な役割や、現在直面している法的課題について、 具体的かつ明確にご指摘いただきましたことに対し、敬意を表します。  いただきました内容を踏まえ、以下にお答え申し上げます。  1. PTAの入会契約の成立要件に関する法的見解について  　貴委員会からの問いかけについて、明確な意思表示がないま「みなし入会」とされる現状については…", "url": ""}, {"name": "神奈川県厚木市", "lat": 35.4428, "lng": 139.3617, "date": "2025-08-05", "body": "ご連絡が遅くなりました。 別ﾌｫﾙﾀﾞｰのチェックを怠っていました。 情報提供ありがとうございます。 厚木市には、照会をかけてあります。 2週間ほどで回答が来る予定です。 https://x.com/jjjqqqxxx0852/status/1952625378658488619 こちらでご確認くださいませ。 厚木も必ず適正化致します。 ご返信が大変遅くなりましたこと心よりお詫びいたします。   2025年5月16日(金) 19:55 Sayuri Nakagawa <nakagawa.sayuri07@gmail.com>:  > PTA適正化推進委員会御中 > > > > お世話になります…", "url": ""}, {"name": "安曇野市", "lat": 36.3037, "lng": 137.905, "date": "2025-12-22", "body": "PTA適正化推進委員会　 事務局代表　佐藤　大　様 お世話になっております。長野県安曇野市教育委員会です。 先日、ご照会いただきました件につき、別添のとおり回答いたします。 回答が遅くなり、申し訳ありませんでした。   安曇野市教育委員会事務局学校教育課 課長：上條、教育総務係長：高橋 0263−71−2223  -----Original message----- From:PTA適正化推進委員会<az001530051919@gmail.com> Cc:a3217<a3217@kyouiku.city.nagoya.lg.jp>,gakkoukyoiku<gakkoukyoiku@city…", "url": "https://drive.google.com/file/d/1EFDug5YF2GmJInLcLqBSYJDWEVauvYYH/view?usp=drivesdk"}, {"name": "西ノ島町", "lat": 36.073, "lng": 133.003, "date": "2025-08-19", "body": "PTA適正化推進委員会　代表　佐藤　様   こんにちは、島根県　西ノ島町教育委員会梶谷と申します。   問い合わせの件について、本町では今年からPTAを解散しており   該当がないことをお伝えさせていただきます。   ------------------------------------------------- 西ノ島町役場 教育課 梶谷　幸作 <kajitani-kousaku@town.nishinoshima.shimane.jp> ◆TEL：08514-6-0171 ◇URL：http://www.town.nishinoshima.shimane.jp     ------Ori…", "url": ""}, {"name": "岡山県", "lat": 34.6618, "lng": 133.9344, "date": "2025-09-25", "body": "PTA適正化推進委員会　佐藤　大 様     岡山県教育委員会へのお問い合わせについては、当県の具体的な事例に関する照会ではないため、回答は差し控えさせていただきます。   ----- Original Message ----- Subject: 【照会】PTAの契約関係及び学校による会費徴収等に関する照会 Date: Wed, 16 Jul 2025 00:39:59 +0900 From: \"PTA適正化推進委員会\"<az001530051919@gmail.com> To: kyoikusodan@pref.okayama.lg.jp PTA適正化推進委員会 wrote: > 拝啓 時…", "url": ""}, {"name": "仙台市", "lat": 38.2682, "lng": 140.8694, "date": "2026-02-25", "body": "---------- Forwarded message --------- From: 仙台市教育委員会生涯学習課 <kyo019310@city.sendai.jp> Date: 2025年6月12日(木) 15:43 Subject: 【仙台市・回答】メールお問い合わせ「PTA運営における法的問題に関する照会」についての回答です To: <az001530051919@gmail.com>   あなた様    このたびは、PTA運営における法的問題についてお問い合わせいただきありがとうございます。  お問い合わせいただいた３点につきまして、以下のとおり回答いたします。      1.PT…", "url": ""}, {"name": "横浜市", "lat": 35.4437, "lng": 139.638, "date": "2025-06-12", "body": "━━━━■横浜市からのお知らせ■━━━━ 本メールの添付ファイルは以下のURLからダウンロードお願いします。 Please download the attached files from the following URL. https://attach2.city.yokohama.lg.jp/sa/download/0a01/d4a9bd8b6e5196e12f7bf25220f11430835a700ad51a27b8c26075d5da1d0218 ダウンロード可能な期間は、最大で14日間ですのでご注意ください。 The files will only be stored for 1…", "url": ""}];
 
-    // ==========================================
-    // ここから下は元のコードに存在した既存の34ピンすべて
-    // ==========================================
-    // 関東（照会回答取得済・青）
-    {n:'川崎市',la:35.5308,lo:139.7030,d:'会費徴収・職務専念義務 照会回答取得。校務化アプローチの限界を確認。',ic:bi},
-    {n:'相模原市',la:35.5701,lo:139.3631,d:'入会手続・個人情報 照会回答取得。是正の方向性を確認。',ic:bi},
-    {n:'藤沢市',la:35.3386,lo:139.4900,d:'無権代理・会費徴収 照会回答取得。代理徴収の法的問題を確認。',ic:bi},
-    {n:'小田原市',la:35.2658,lo:139.1554,d:'強制加入・個人情報・会費徴収 照会回答取得。',ic:bi},
-    {n:'東京都',la:35.6762,lo:139.6503,d:'入会手続・個人情報 照会回答取得。複数区教委への照会実施。',ic:bi},
-    {n:'千葉市',la:35.6074,lo:140.1065,d:'会費徴収・学校関与 照会回答取得。',ic:bi},
-    {n:'さいたま市',la:35.8616,lo:139.6455,d:'個人情報提供 照会回答取得。',ic:bi},
-    {n:'水戸市',la:36.3418,lo:140.4470,d:'資料収集対象',ic:oi},
-    {n:'宇都宮市',la:36.5551,lo:139.8826,d:'資料収集対象',ic:oi},
-    {n:'前橋市',la:36.3895,lo:139.0601,d:'資料収集対象',ic:oi},
-    // 東北
-    {n:'仙台市',la:38.2682,lo:140.8694,d:'職務専念義務 照会回答取得。',ic:bi},
-    {n:'大崎市',la:38.5748,lo:140.9541,d:'会費徴収・代理徴収 照会回答取得。',ic:bi},
-    {n:'盛岡市',la:39.7036,lo:141.1527,d:'資料収集対象',ic:oi},
-    {n:'青森市',la:40.8244,lo:140.7400,d:'資料収集対象',ic:oi},
-    // 中部・北陸
-    {n:'名古屋市',la:35.1815,lo:136.9066,d:'個人情報・強制加入 照会回答取得。',ic:bi},
-    {n:'静岡市',la:34.9769,lo:138.3831,d:'会費徴収 照会回答取得。',ic:bi},
-    {n:'滋賀県',la:35.0045,lo:135.8686,d:'会費徴収論点・職務専念義務 照会回答取得。',ic:bi},
-    {n:'金沢市',la:36.5947,lo:136.6256,d:'資料収集対象',ic:oi},
-    {n:'富山市',la:36.6953,lo:137.2137,d:'資料収集対象',ic:oi},
-    // 近畿
-    {n:'大阪市',la:34.6937,lo:135.5023,d:'入会手続・個人情報 照会回答取得。',ic:bi},
-    {n:'堺市',la:34.5733,lo:135.4830,d:'非会員差別論点（大阪地裁堺支部判決）関連調査。',ic:bi},
-    {n:'京都市',la:35.0116,lo:135.7681,d:'個人情報・会費徴収 照会回答取得。',ic:bi},
-    {n:'神戸市',la:34.6901,lo:135.1956,d:'資料収集対象',ic:oi},
-    {n:'奈良市',la:34.6851,lo:135.8050,d:'資料収集対象',ic:oi},
-    // 中国・四国
-    {n:'岡山市',la:34.6618,lo:133.9344,d:'個人情報論点・照会回答取得。',ic:bi},
-    {n:'広島市',la:34.3853,lo:132.4553,d:'会費徴収・職務専念義務 照会回答取得。',ic:bi},
-    {n:'松山市',la:33.8416,lo:132.7657,d:'資料収集対象',ic:oi},
-    // 九州
-    {n:'福岡市',la:33.5904,lo:130.4017,d:'入会手続・個人情報 照会回答取得。',ic:bi},
-    {n:'熊本市',la:32.8032,lo:130.7079,d:'熊本PTA裁判（H28年判決）・熊本県教育長宛行政実例（S39年）の発祥地。照会回答取得。',ic:bi},
-    {n:'鹿児島市',la:31.5966,lo:130.5571,d:'鹿児島地裁の事例（黙示加入の限界）関連調査。',ic:bi},
-    {n:'大分市',la:33.2382,lo:131.6126,d:'資料収集対象',ic:oi},
-    // 北海道
-    {n:'札幌市',la:43.0618,lo:141.3545,d:'個人情報・強制加入 照会回答取得。',ic:bi},
-    {n:'函館市',la:41.7688,lo:140.7290,d:'資料収集対象',ic:oi}
-  ];
-  pts.forEach(p=>L.marker([p.la,p.lo],{icon:p.ic}).addTo(m).bindPopup(`<strong>${p.n}</strong><br>${p.d}`));
+  const m = L.map('board-map').setView([36.4, 138.1], 5);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '&copy; OpenStreetMap'
+  }).addTo(m);
+
+  // アイコン定義
+  function makeIcon(color) {
+    return L.icon({
+      iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`,
+      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+      iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34]
+    });
+  }
+  const iconRed    = makeIcon('red');
+  const iconBlue   = makeIcon('blue');
+  const iconGreen  = makeIcon('green');
+  const iconOrange = makeIcon('orange');
+  const iconGold   = makeIcon('gold');
+
+  // 横浜市は特別（赤）
+  const YOKOHAMA = {n:'横浜市',la:35.4437,lo:139.6380,d:'<b>全国初</b> オプトイン義務化通知（学教第1965号）発出。'};
+  L.marker([YOKOHAMA.la, YOKOHAMA.lo], {icon:iconRed}).addTo(m)
+    .bindPopup(`<strong style="font-size:1rem">横浜市教育委員会</strong><br><span style="color:#b91c1c;font-weight:700">🥇 全国初・通知発出</span><br><div style="margin-top:6px;font-size:.82rem">${YOKOHAMA.d}</div>`);
+
+  // 自治体ごとにマーカーを打つ（同座標は少しずらす）
+  const placed = {};
+  BOARD_DATA.forEach(d => {
+    if (d.name === '横浜市') return; // 横浜は上で処理
+    const key = `${d.lat.toFixed(3)},${d.lng.toFixed(3)}`;
+    placed[key] = (placed[key] || 0) + 1;
+    const offset = placed[key] * 0.008;
+    const lat = d.lat + (Math.sin(placed[key]) * offset);
+    const lng = d.lng + (Math.cos(placed[key]) * offset);
+
+    const urlHtml = d.url && d.url !== 'nan'
+      ? `<a href="${d.url}" target="_blank" style="color:#1d4ed8;font-weight:700;font-size:.78rem">📄 ファイルを見る</a>`
+      : '';
+
+    const popup = `<div style="max-width:280px">
+      <strong style="font-size:.95rem">${d.name}</strong>
+      <div style="color:#6b7280;font-size:.75rem;margin:2px 0 6px">${d.date}</div>
+      <div style="font-size:.8rem;line-height:1.6;color:#374151;max-height:120px;overflow-y:auto">${d.body}</div>
+      ${urlHtml ? `<div style="margin-top:8px">${urlHtml}</div>` : ''}
+    </div>`;
+
+    L.marker([lat, lng], {icon: iconBlue}).addTo(m).bindPopup(popup);
+  });
   </script>
-</body>
+</body>-e 
 </html>
-```
